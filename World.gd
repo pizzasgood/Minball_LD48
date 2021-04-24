@@ -18,7 +18,9 @@ func remove_ball(ball: RigidBody2D) -> void:
 	balls.erase(ball)
 	ball.queue_free()
 	if extra_balls > 0:
-		call_deferred("spawn_ball")
+		# don't spawn a ball if we're doing multball
+		if len(balls) == 0:
+			call_deferred("spawn_ball")
 	else:
 		print("Game Over")
 
