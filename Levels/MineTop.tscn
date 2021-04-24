@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Mechanisms/FlipperLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Mechanisms/Girder1x.tscn" type="PackedScene" id=2]
@@ -9,15 +9,17 @@
 [ext_resource path="res://Mechanisms/Girder5x.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mechanisms/FlipperRight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SFX/mining.wav" type="AudioStream" id=9]
-[ext_resource path="res://Levels/MineTop.gd" type="Script" id=10]
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Mechanisms/DropTargets.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Mechanisms/Girder3x.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Mechanisms/Bumper.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Levels/MineTop.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 413.691, 45.6281 )
 
 [node name="MineTop" type="Node2D"]
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="FlipperLeft" parent="." instance=ExtResource( 1 )]
 position = Vector2( 304.754, 930.421 )
@@ -110,5 +112,29 @@ rotation = 1.55968
 
 [node name="Girder" parent="DropTargets" instance=ExtResource( 12 )]
 position = Vector2( 1.12247, -14.6326 )
+
+[node name="Bumper" parent="." instance=ExtResource( 13 )]
+position = Vector2( 270.154, 242.342 )
+
+[node name="Bumper7" parent="." instance=ExtResource( 13 )]
+position = Vector2( 266.79, 385.294 )
+
+[node name="Bumper2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 413.197, 182.803 )
+
+[node name="Bumper3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 404.062, 462.826 )
+
+[node name="Bumper4" parent="." instance=ExtResource( 13 )]
+position = Vector2( 537.72, 239.593 )
+
+[node name="Bumper5" parent="." instance=ExtResource( 13 )]
+position = Vector2( 408.49, 320.966 )
+
+[node name="Bumper6" parent="." instance=ExtResource( 13 )]
+position = Vector2( 538.297, 393.015 )
+
+[node name="Ball" parent="." instance=ExtResource( 10 )]
+position = Vector2( 413.721, 228.724 )
 
 [connection signal="targets_complete" from="DropTargets" to="." method="_on_DropTargets_targets_complete"]
