@@ -6,7 +6,7 @@ export var flip_range := 60.0
 export var flip_speed := 800
 
 var flipping := false
-var current_speed : float
+var current_speed := 0.0
 var min_angle : float
 var max_angle : float
 

@@ -2,9 +2,11 @@
 
 [ext_resource path="res://MuteButton/MuteButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://DemoLevel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World.tscn" type="PackedScene" id=3]
 
 [node name="Node" type="Node"]
+
+[node name="World" parent="." instance=ExtResource( 3 )]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -25,5 +27,3 @@ margin_bottom = 1000.0
 
 [node name="PauseMenu" parent="." instance=ExtResource( 2 )]
 visible = false
-
-[node name="DemoLevel" parent="." instance=ExtResource( 3 )]
