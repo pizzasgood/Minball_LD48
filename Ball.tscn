@@ -13,7 +13,9 @@ radius = 16.0
 "balls",
 ]]
 collision_layer = 2
+collision_mask = 3
 physics_material_override = SubResource( 1 )
+continuous_cd = 2
 contacts_reported = 4
 contact_monitor = true
 can_sleep = false
