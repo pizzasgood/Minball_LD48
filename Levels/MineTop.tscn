@@ -9,7 +9,7 @@
 [ext_resource path="res://Mechanisms/Girder5x.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mechanisms/FlipperRight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SFX/mining.wav" type="AudioStream" id=9]
-[ext_resource path="res://Ball.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Mechanisms/DestructableBumper.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Mechanisms/DropTargets.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Mechanisms/Girder3x.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Mechanisms/Bumper.tscn" type="PackedScene" id=13]
@@ -134,7 +134,10 @@ position = Vector2( 408.49, 320.966 )
 [node name="Bumper6" parent="." instance=ExtResource( 13 )]
 position = Vector2( 538.297, 393.015 )
 
-[node name="Ball" parent="." instance=ExtResource( 10 )]
-position = Vector2( 413.721, 228.724 )
+[node name="DestructableBumper" parent="." instance=ExtResource( 10 )]
+position = Vector2( 371.676, 745.034 )
+
+[node name="DestructableBumper2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 438.948, 743.352 )
 
 [connection signal="targets_complete" from="DropTargets" to="." method="_on_DropTargets_targets_complete"]
