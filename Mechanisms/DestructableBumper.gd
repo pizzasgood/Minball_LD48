@@ -4,6 +4,7 @@ export var hp := 3
 export var force := 750.0
 
 onready var sfx : AudioStreamPlayer2D = find_node("SFX")
+onready var sfx2 : AudioStreamPlayer2D = find_node("SFX2")
 
 func _on_Bumper_body_entered(body: RigidBody2D) -> void:
 	if hp <= 0:
@@ -18,5 +19,9 @@ func _on_Bumper_body_entered(body: RigidBody2D) -> void:
 			die()
 
 func die() -> void:
-	print("poof")
+	visible = false
+	collision_mask = 0
+	sfx2.play()
+
+func _on_SFX2_finished() -> void:
 	queue_free()

@@ -20,7 +20,6 @@ func _on_DropTarget_body_entered(body: RigidBody2D) -> void:
 	if body.is_in_group("balls"):
 		sfx.play()
 		drop()
-		print("PING")
 		emit_signal("target_hit", self, body)
 
 func drop() -> void:
