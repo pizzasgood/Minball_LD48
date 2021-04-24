@@ -11,9 +11,7 @@ var min_angle : float
 var max_angle : float
 
 onready var flipper : KinematicBody2D = find_node("Flipper")
-
-func activate():
-	pass
+onready var sfx : AudioStreamPlayer2D = find_node("SFX")
 
 func _ready() -> void:
 	if left_flipper:
@@ -27,7 +25,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if alive:
 		if (left_flipper and Input.is_action_just_pressed("flippers_left")) or (not left_flipper and Input.is_action_just_pressed("flippers_right")):
-			pass #TODO: play a sound!
+			sfx.play()
 		flipping = (left_flipper and Input.is_action_pressed("flippers_left")) or (not left_flipper and Input.is_action_pressed("flippers_right"))
 	else:
 		flipping = false

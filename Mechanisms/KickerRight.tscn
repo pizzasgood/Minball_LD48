@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Mechanisms/kicker.png" type="Texture" id=1]
 [ext_resource path="res://Mechanisms/Kicker.gd" type="Script" id=2]
+[ext_resource path="res://SFX/bumper.wav" type="AudioStream" id=3]
 
 [node name="Kicker" type="RigidBody2D"]
 collision_mask = 2
@@ -22,5 +23,9 @@ polygon = PoolVector2Array( 36.3052, -64.4446, 36.1784, 31.465, 35.4962, 34.0434
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BounceZone"]
 polygon = PoolVector2Array( 29.799, -61.861, -29.001, 58.918, -42.245, 59.977, 25.296, -72.72 )
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_Kicker_body_entered"]
