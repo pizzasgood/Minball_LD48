@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Mechanisms/girder.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 94.8, 10 )
+
+[node name="Girder" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = ExtResource( 1 )
+texture_offset = Vector2( 29, 10 )
+polygon = PoolVector2Array( 94.8, -10, 94.8, 10, -94.8, 10, -94.8, -10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

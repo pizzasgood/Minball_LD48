@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Mechanisms/flipper.png" type="Texture" id=1]
+
+[node name="Flipper" type="KinematicBody2D"]
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 0, 32 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -3.63208, -15.6535, -9.59516, -12.7772, -14.5761, -6.81413, -15.6284, -3.72736, -15.5305, 4.70458, -7.82112, 73.7208, -5.33174, 77.3533, -1.88229, 79.607, 2.00686, 79.6596, 5.26289, 77.4196, 7.60687, 73.7709, 15.5375, 5.59649, 15.5901, -3.79751, 14.5378, -6.88429, 9.69717, -12.7772, 3.66393, -15.6535 )
