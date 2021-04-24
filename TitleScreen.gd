@@ -6,16 +6,16 @@ onready var exit_button : Button = find_node("ExitButton")
 
 onready var about_window = find_node("AboutWindow")
 
-func _on_StartButton_pressed():
+func _on_StartButton_pressed() -> void:
 	get_tree().change_scene("res://Main.tscn")
 
-func _on_AboutButton_pressed():
+func _on_AboutButton_pressed() -> void:
 	about_window.visible = true
 
-func _on_ExitButton_pressed():
+func _on_ExitButton_pressed() -> void:
 	get_tree().quit()
 
-func _ready():
+func _ready() -> void:
 	start_button.connect("pressed", self, "_on_StartButton_pressed")
 	about_button.connect("pressed", self, "_on_AboutButton_pressed")
 	exit_button.connect("pressed", self, "_on_ExitButton_pressed")
