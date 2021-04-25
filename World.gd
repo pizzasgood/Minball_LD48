@@ -13,6 +13,7 @@ onready var hud : Control = gui.find_node("HUD")
 onready var score_label : Label = hud.find_node("Score")
 onready var balls_label : Label = hud.find_node("Balls")
 onready var game_over_menu : Control = gui.find_node("GameOver")
+onready var victory_menu : Control = gui.find_node("Victory")
 
 func _ready() -> void:
 	self.score = 0
@@ -46,6 +47,9 @@ func remove_ball(ball: RigidBody2D) -> void:
 func game_over() -> void:
 	game_over_menu.display()
 
+func victory() -> void:
+	victory_menu.display()
+
 func boss_died() -> void:
 	mine_top.enable_hatch()
 
@@ -65,6 +69,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_node("Arena")._on_DropTargets_targets_complete(null, null)
 		if event.is_action_pressed("cheat_5"):
 			boss_died()
+		if event.is_action_pressed("cheat_7"):
+			balls[0].position = Vector2(-150, 3700)
 		if event.is_action_pressed("cheat_8"):
 			balls[0].position = Vector2(-150, -700)
 		if event.is_action_pressed("cheat_9"):

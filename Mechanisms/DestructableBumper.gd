@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal bumper_destroyed
+
 export var hp := 1
 export var force := 750.0
 export var points := 1
@@ -26,6 +28,7 @@ func die() -> void:
 	collision_layer = 0
 	collision_mask = 0
 	sfx2.play()
+	emit_signal("bumper_destroyed")
 
 func _on_SFX2_finished() -> void:
 	queue_free()
