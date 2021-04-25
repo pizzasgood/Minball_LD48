@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GameOver.gd" type="Script" id=1]
+[ext_resource path="res://SFX/extra_ball.wav" type="AudioStream" id=2]
+
+[node name="GameOver" type="CenterContainer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 280.0
+margin_top = 442.0
+margin_right = 519.0
+margin_bottom = 558.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 231.0
+margin_bottom = 108.0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+margin_right = 223.0
+margin_bottom = 14.0
+text = "GAME OVER"
+align = 1
+
+[node name="Score" type="Label" parent="PanelContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 223.0
+margin_bottom = 32.0
+text = "Score: 0"
+
+[node name="CheatButton" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 223.0
+margin_bottom = 66.0
+text = "Insert fake quarter to CONTINUE"
+
+[node name="SFX" type="AudioStreamPlayer" parent="PanelContainer/VBoxContainer/CheatButton"]
+stream = ExtResource( 2 )
+bus = "SFX"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 70.0
+margin_right = 223.0
+margin_bottom = 100.0
+text = "Give up like a wuss"

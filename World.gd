@@ -12,6 +12,7 @@ onready var gui : CanvasLayer = get_node("../GUI")
 onready var hud : Control = gui.find_node("HUD")
 onready var score_label : Label = hud.find_node("Score")
 onready var balls_label : Label = hud.find_node("Balls")
+onready var game_over_menu : Control = gui.find_node("GameOver")
 
 func _ready() -> void:
 	self.score = 0
@@ -40,7 +41,10 @@ func remove_ball(ball: RigidBody2D) -> void:
 		if len(balls) == 0:
 			call_deferred("spawn_ball")
 	else:
-		print("Game Over")
+		game_over()
+
+func game_over() -> void:
+	game_over_menu.display()
 
 func boss_died() -> void:
 	mine_top.enable_hatch()
