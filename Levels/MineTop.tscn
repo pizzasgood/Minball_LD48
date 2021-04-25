@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Mechanisms/FlipperLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/mine_top.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Mechanisms/LampPump.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Mechanisms/DestructableBumper.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Mechanisms/DropTargets.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Mechanisms/LampArrow.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Mechanisms/Bumper.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Levels/MineTop.gd" type="Script" id=14]
 
@@ -143,6 +144,9 @@ position = Vector2( -91.874, -21.0116 )
 rotation = 0.229386
 polygon = PoolVector2Array( 296.14, -390.44, 75.8852, -393.545, 54.0018, -419.087, 309.794, -417.857 )
 
+[node name="LampArrow" parent="HatchControl" instance=ExtResource( 12 )]
+position = Vector2( 3.68399, 33.2924 )
+
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_mask = 0
 
@@ -150,7 +154,7 @@ collision_mask = 0
 polygon = PoolVector2Array( 561.361, -121.103, 560.67, -238.999, 558.924, -282.321, 544, -341, 521, -373.5, 496.5, -392, 467, -400, 422, -402.5, 371, -399.5, 296, -394, 300.376, -429.881, 448.165, -430.436, 591.658, -383.725, 792.745, 63.2096, 707, 427, 577, 425, 550, 302, 521, 261, 452.358, 212.869, 466.674, 197.969, 598.611, 161.968, 647.346, 107.935, 635.692, 62.3785, 611.324, 20, 559.411, 20, 496.753, 44.8114, 402.797, -88.0333, 385.336, -81.4261, 380.144, -104.079, 435.833, -127.676, 459.43, -158.511, 470.761, -220.143, 458.161, -296.998, 439.263, -337.316, 418.168, -356.76, 468.5, -355.5, 493.653, -334.773, 511.331, -306.489, 521.938, -267.598, 527.678, -211.497, 528.324, -121.103 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( 65.3366, -429.848, 147.792, -398.27, -21.2287, -302.408, -141, -206, -226, -105, -266, 3, -293, 133, -299.311, 256.333, -262.919, 256.405, -257.556, 198.404, -116.73, 185.056, 17.5728, 288.783, -7.14929, 329.237, -98.8628, 311.638, -229.309, 309.999, -330.872, 346.526, -356.374, 424.234, -460.943, 429.38, -219.208, -432.654 )
+polygon = PoolVector2Array( 65.3366, -429.848, 147.792, -398.27, 52.9946, -344.504, -21.2287, -302.408, -141, -206, -226, -105, -266, 3, -293, 133, -299.311, 256.333, -262.919, 256.405, -257.556, 198.404, -116.73, 185.056, 17.5728, 288.783, -7.14929, 329.237, -98.8628, 311.638, -229.309, 309.999, -330.872, 346.526, -356.374, 424.234, -460.943, 429.38, -219.208, -432.654 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( -84.2205, -196.765, -129.817, -150.125, -158.952, -89.4758, -171.102, -13.5736, -102.878, -4.89633, -86.7133, -18.2235, -3.02127, -87.6861, 10.222, -91.3943, 12.4205, -121.966, -27.7766, -142.632 )

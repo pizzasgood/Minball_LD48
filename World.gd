@@ -6,6 +6,7 @@ var balls := []
 var score := 0 setget score_set
 
 onready var mine_top := get_node("MineTop")
+onready var arena := get_node("Arena")
 onready var original_plunger := mine_top.get_node("Plunger")
 onready var active_plunger = original_plunger
 onready var camera : Camera2D = get_node("Camera2D")
@@ -53,6 +54,7 @@ func victory() -> void:
 
 func boss_died() -> void:
 	mine_top.enable_hatch()
+	arena.start_flood()
 
 func _unhandled_input(event: InputEvent) -> void:
 	# some cheat codes for debugging

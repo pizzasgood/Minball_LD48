@@ -31,6 +31,10 @@ func _on_BossTween_tween_completed(_object: Object, _key: NodePath) -> void:
 	boss_tween.interpolate_property(spawn_point, "unit_offset", 0.0, 1.0, loop_duration, Tween.TRANS_LINEAR)
 	boss_tween.start()
 
+func start_flood() -> void:
+	if is_instance_valid(drain):
+		drain.flood()
+
 func remove_drain() -> void:
 	if is_instance_valid(drain):
 		drain.banish()

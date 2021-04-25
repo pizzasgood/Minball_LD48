@@ -33,9 +33,12 @@ func drop() -> void:
 	up = false
 	for i in targets:
 		i.drop()
+	if lamp:
+		lamp.light_off()
 
 func raise() -> void:
 	up = true
 	for i in targets:
 		i.raise()
-
+	if lamp:
+		lamp.light_on()
