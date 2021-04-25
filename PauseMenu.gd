@@ -4,6 +4,11 @@ onready var resume_button : Button = find_node("ResumeButton")
 onready var cheat_button : Button = find_node("CheatButton")
 onready var quit_button : Button = find_node("QuitButton")
 
+func display() -> void:
+	visible = true
+	resume_button.grab_focus()
+	get_tree().paused = true
+
 func _on_ResumeButton_pressed() -> void:
 	visible = false
 	get_tree().paused = false
@@ -30,8 +35,5 @@ func _unhandled_input(event) -> void:
 		if visible:
 			_on_ResumeButton_pressed()
 		else:
-			visible = true
-			resume_button.grab_focus()
-			get_tree().paused = true
+			display()
 		get_tree().set_input_as_handled()
-

@@ -8,7 +8,8 @@ var score := 0 setget score_set
 onready var mine_top := get_node("MineTop")
 onready var active_plunger := mine_top.get_node("Plunger")
 onready var camera : Camera2D = get_node("Camera2D")
-onready var hud : Control = get_node("../CanvasLayer/HUD")
+onready var gui : CanvasLayer = get_node("../GUI")
+onready var hud : Control = gui.find_node("HUD")
 onready var score_label : Label = hud.find_node("Score")
 onready var balls_label : Label = hud.find_node("Balls")
 
