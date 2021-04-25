@@ -11,3 +11,31 @@
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
+
+[node name="HUD" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/HUD"]
+margin_right = 800.0
+margin_bottom = 30.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HUD/PanelContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 792.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+
+[node name="Score" type="Label" parent="CanvasLayer/HUD/PanelContainer/HBoxContainer"]
+margin_right = 390.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="Balls" type="Label" parent="CanvasLayer/HUD/PanelContainer/HBoxContainer"]
+margin_left = 394.0
+margin_right = 784.0
+margin_bottom = 14.0
+size_flags_horizontal = 3

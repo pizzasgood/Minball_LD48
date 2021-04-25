@@ -2,9 +2,11 @@ extends RigidBody2D
 
 export var hp := 1
 export var force := 750.0
+export var points := 1
 
 onready var sfx : AudioStreamPlayer2D = find_node("SFX")
 onready var sfx2 : AudioStreamPlayer2D = find_node("SFX2")
+onready var world := find_parent("World")
 
 func _on_Bumper_body_entered(body: RigidBody2D) -> void:
 	if hp <= 0:
@@ -19,6 +21,7 @@ func _on_Bumper_body_entered(body: RigidBody2D) -> void:
 			die()
 
 func die() -> void:
+	world.score += points
 	visible = false
 	collision_layer = 0
 	collision_mask = 0

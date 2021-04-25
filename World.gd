@@ -1,18 +1,34 @@
 extends Node2D
 
-export var extra_balls := 3
+export var extra_balls := 3 setget extra_balls_set
 
-var balls = []
+var balls := []
+var score := 0 setget score_set
 
 onready var mine_top := get_node("MineTop")
 onready var active_plunger := mine_top.get_node("Plunger")
 onready var camera : Camera2D = get_node("Camera2D")
+onready var hud : Control = get_node("../CanvasLayer/HUD")
+onready var score_label : Label = hud.find_node("Score")
+onready var balls_label : Label = hud.find_node("Balls")
 
 func _ready() -> void:
+	self.score = 0
 	spawn_ball()
 
+func extra_balls_set(val: int):
+	extra_balls = val
+	var s := "Extra Balls: "
+	for _i in range(extra_balls):
+		s += "*"
+	balls_label.text = s
+
+func score_set(val: int):
+	score = val
+	score_label.text = "Score: %s" % score
+
 func spawn_ball() -> void:
-	extra_balls -= 1
+	self.extra_balls -= 1
 	balls.append(active_plunger.spawn_ball())
 
 func remove_ball(ball: RigidBody2D) -> void:
@@ -32,7 +48,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	# some cheat codes for debugging
 	if OS.is_debug_build():
 		if event.is_action_pressed("ui_select"):
-			extra_balls += 1
+			self.extra_balls += 1
 			spawn_ball()
 		if event.is_action_pressed("cheat_1"):
 			get_node("MineTop")._on_DropTargets_targets_complete(null, null)
