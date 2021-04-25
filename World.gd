@@ -4,7 +4,8 @@ export var extra_balls := 3
 
 var balls = []
 
-onready var active_plunger := get_node("MineTop/Plunger")
+onready var mine_top := get_node("MineTop")
+onready var active_plunger := mine_top.get_node("Plunger")
 onready var camera : Camera2D = get_node("Camera2D")
 
 func _ready() -> void:
@@ -24,6 +25,9 @@ func remove_ball(ball: RigidBody2D) -> void:
 	else:
 		print("Game Over")
 
+func boss_died() -> void:
+	mine_top.enable_hatch()
+
 func _unhandled_input(event: InputEvent) -> void:
 	# some cheat codes for debugging
 	if OS.is_debug_build():
@@ -38,5 +42,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_node("MineBottom")._on_DropTargets_targets_complete(null, null)
 		if event.is_action_pressed("cheat_4"):
 			get_node("Arena")._on_DropTargets_targets_complete(null, null)
+		if event.is_action_pressed("cheat_5"):
+			boss_died()
+		if event.is_action_pressed("cheat_8"):
+			balls[0].position = Vector2(-150, -700)
 		if event.is_action_pressed("cheat_9"):
 			balls[0].position = Vector2(-150, 2700)

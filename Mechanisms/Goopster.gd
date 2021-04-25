@@ -10,6 +10,7 @@ onready var sfx : AudioStreamPlayer2D = get_node("SFX")
 onready var sfx2 : AudioStreamPlayer2D = get_node("SFX2")
 onready var sprite : AnimatedSprite = get_node("AnimatedSprite")
 onready var tween : Tween = get_node("Tween")
+onready var world : Node2D = find_parent("World")
 
 func _on_Goopster_body_entered(body: RigidBody2D) -> void:
 	if hp <= 0:
@@ -33,6 +34,7 @@ func die() -> void:
 	collision_layer = 0
 	collision_mask = 0
 	sfx2.play() #TODO: find a better dying-monster sound!
+	world.boss_died()
 
 func _on_SFX2_finished() -> void:
 	queue_free()

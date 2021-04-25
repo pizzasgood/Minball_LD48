@@ -4,9 +4,9 @@
 [ext_resource path="res://Levels/Arena.gd" type="Script" id=2]
 [ext_resource path="res://Mechanisms/DropTargets.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mechanisms/FlipperLeft.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Mechanisms/Plunger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Mechanisms/FlipperRight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Mechanisms/Drain.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Mechanisms/Bumper.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 840.635, 56.1452 )
@@ -35,16 +35,13 @@ position = Vector2( 163.934, 724.677 )
 position = Vector2( 58.7992, 19.5997 )
 shape = SubResource( 1 )
 
-[node name="Plunger" parent="." instance=ExtResource( 5 )]
-position = Vector2( -347.575, -37.0108 )
-
 [node name="Ore" type="Node2D" parent="."]
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_mask = 0
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( -156, 495, -510.063, 475.25, -518.751, -378.773, -369.981, -398.18, -363.212, 65.9898, -329.914, 64.8006, -328.251, -48.9699, -136.984, -129.868, -99.2083, -102.878, -125.992, -76.5895, -152.12, 41.6744, -303.481, 268.716, -311.89, 320.852, -221.073, 448.668, -154, 478.5 )
+polygon = PoolVector2Array( -156, 495, -510.063, 475.25, -518.751, -378.773, -369.981, -398.18, -363.212, 65.9898, -329.914, 64.8006, -327.668, -25.1678, -305.073, -57.2764, -136.984, -129.868, -99.2083, -102.878, -125.992, -76.5895, -152.12, 41.6744, -303.481, 268.716, -311.89, 320.852, -221.073, 448.668, -154, 478.5 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 231, -30, 194, -19, 142.582, 33.6988, 187.888, 113.928, 292.658, 86.5558, 282.275, 10.102 )
@@ -98,6 +95,10 @@ rotation = -1.54199
 lookahead = 320.0
 
 [node name="BossTween" type="Tween" parent="BossEntryPath/BossSpawn"]
+
+[node name="Bumper" parent="." instance=ExtResource( 8 )]
+position = Vector2( -346.059, 53.5143 )
+force = 1500.0
 
 [connection signal="targets_complete" from="DropTargets" to="." method="_on_DropTargets_targets_complete"]
 [connection signal="tween_completed" from="BossEntryPath/BossSpawn/BossTween" to="." method="_on_BossTween_tween_completed"]

@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 94.8, 10 )
 
-[node name="Girder" type="StaticBody2D"]
+[node name="Girder3x" type="StaticBody2D"]
 collision_mask = 0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
