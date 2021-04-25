@@ -1,0 +1,20 @@
+[remap]
+
+importer="aseprite_importer"
+type="SpriteFrames"
+path="res://.import/goal_lamp.aseprite-f86fd88fd0a41b5c35c0c87a1e32033a.tres"
+
+[deps]
+
+source_file="res://Mechanisms/goal_lamp.aseprite"
+dest_files=[ "res://.import/goal_lamp.aseprite-f86fd88fd0a41b5c35c0c87a1e32033a.tres" ]
+
+[params]
+
+mipmaps=true
+repeat=true
+filter=false
+anisotropic_filter=false
+convert_to_linear=false
+mirrored_repeat=false
+video_surface=false

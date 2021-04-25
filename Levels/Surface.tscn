@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Levels/surface.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Surface.gd" type="Script" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://Mechanisms/FlipperRight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Mechanisms/Girder5x.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Mechanisms/Girder3x.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Mechanisms/OneWay.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Rocket.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mechanisms/Girder1x.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Mechanisms/Bumper.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Mechanisms/LampArrow.tscn" type="PackedScene" id=10]
 
 [node name="Surface" type="Node2D"]
 script = ExtResource( 2 )
@@ -28,15 +29,17 @@ polygon = PoolVector2Array( 308.55, 786.542, 309.434, 756.276, 364.544, 714.331,
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 54.6439, 789.215, 70.68, 755.361, 17.799, 740.27, 12.555, 788.965 )
 
-[node name="Girders" type="Node2D" parent="."]
+[node name="Gantry" type="Node2D" parent="."]
 
-[node name="Girder5x9" parent="Girders" instance=ExtResource( 5 )]
-position = Vector2( 6.58008, 37.0338 )
-rotation = -3.32423
+[node name="Girder5x9" parent="Gantry" instance=ExtResource( 5 )]
+position = Vector2( 5.95011, 40.8136 )
+rotation = 2.9864
 
-[node name="Girder5x10" parent="Girders" instance=ExtResource( 5 )]
+[node name="Girder5x10" parent="Gantry" instance=ExtResource( 5 )]
 position = Vector2( -1.90521, -32.2627 )
-rotation = -3.32423
+rotation = 2.95896
+
+[node name="Girders" type="Node2D" parent="."]
 
 [node name="Girder5x8" parent="Girders" instance=ExtResource( 5 )]
 position = Vector2( 35.2267, 632.734 )
@@ -67,8 +70,8 @@ position = Vector2( 448.534, -41.4665 )
 rotation = -1.57079
 
 [node name="Girder3x8" parent="Girders" instance=ExtResource( 6 )]
-position = Vector2( 317.99, 215.847 )
-rotation = -1.98537
+position = Vector2( 317.99, 224.036 )
+rotation = -1.93554
 
 [node name="Girder3x14" parent="Girders" instance=ExtResource( 6 )]
 position = Vector2( 117.069, 447.074 )
@@ -90,7 +93,7 @@ position = Vector2( 404.914, -237.13 )
 rotation = 0.785397
 
 [node name="Girder3x9" parent="Girders" instance=ExtResource( 6 )]
-position = Vector2( 217.877, 70.3497 )
+position = Vector2( 219.767, 77.2793 )
 rotation = -2.3814
 
 [node name="Girder1x4" parent="Girders" instance=ExtResource( 8 )]
@@ -126,8 +129,8 @@ position = Vector2( 370.25, 649.876 )
 rotation = -2.37209
 
 [node name="Girder1x13" parent="Girders" instance=ExtResource( 8 )]
-position = Vector2( 319.468, 307.036 )
-rotation = -3.51811
+position = Vector2( 320.098, 309.556 )
+rotation = -3.39697
 
 [node name="Girder1x14" parent="Girders" instance=ExtResource( 8 )]
 position = Vector2( 55.7986, 557.703 )
@@ -143,21 +146,43 @@ position = Vector2( 44.1371, 685.83 )
 [node name="FlipperRight3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 372.584, 727.394 )
 
-[node name="Rocket" type="KinematicBody2D" parent="."]
-position = Vector2( -16.818, 141.271 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocket"]
-position = Vector2( 0, 0.5 )
-polygon = PoolVector2Array( -259.498, 46.2637, -261.618, -341.719, -311.385, -237.146, -317.685, -87.215, -318.758, 248.337, -463.211, 594.39, -315.583, 492.797, -272.723, 543.594, -171.129, 543.594, -125.095, 499.146, 27.2958, 597.565, -129.857, 246.75, -130.657, -84.8726, -183.986, -79.2094, -202.252, -60.3701, -206.742, -28.9412, -205.056, 45.8798 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Rocket"]
-position = Vector2( 0.555054, 339.23 )
-polygon = PoolVector2Array( -209.887, -679.819, -208.795, -520.684, -182.707, -466.985, -135.513, -471.704, -162.64, -582.175 )
-
-[node name="OneWay" parent="Rocket" instance=ExtResource( 7 )]
-position = Vector2( -148.469, -107.035 )
-rotation = -1.67471
+[node name="Rocket" parent="." instance=ExtResource( 7 )]
+position = Vector2( -248.115, 132.035 )
 
 [node name="Bumper" parent="." instance=ExtResource( 9 )]
 position = Vector2( 423.402, 712.393 )
 force = 1500.0
+
+[node name="LampArrow" parent="." instance=ExtResource( 10 )]
+position = Vector2( 410.057, 634.195 )
+rotation = 2.61799
+
+[node name="LampArrow2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 386.057, 591.194 )
+rotation = 2.61799
+
+[node name="LampArrow3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 361.057, 547.195 )
+rotation = 2.61799
+
+[node name="LampArrow4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 401.197, 162.57 )
+rotation = -0.661595
+
+[node name="LampArrow8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 415.659, 324.576 )
+rotation = -0.00551302
+
+[node name="LampArrow5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 286.033, 50.14 )
+rotation = -0.876452
+scale = Vector2( 1, 1 )
+
+[node name="LampArrow6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 143.009, -14.1935 )
+rotation = -1.51103
+
+[node name="LampArrow7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2.4346, 4.30609 )
+rotation = -1.72103
+scale = Vector2( 1, 1 )

@@ -6,7 +6,8 @@ var balls := []
 var score := 0 setget score_set
 
 onready var mine_top := get_node("MineTop")
-onready var active_plunger := mine_top.get_node("Plunger")
+onready var original_plunger := mine_top.get_node("Plunger")
+onready var active_plunger = original_plunger
 onready var camera : Camera2D = get_node("Camera2D")
 onready var gui : CanvasLayer = get_node("../GUI")
 onready var hud : Control = gui.find_node("HUD")
@@ -69,6 +70,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_node("Arena")._on_DropTargets_targets_complete(null, null)
 		if event.is_action_pressed("cheat_5"):
 			boss_died()
+		if event.is_action_pressed("cheat_6"):
+			get_node("MineTop")._on_DropTargets_targets_complete(null, null)
+			get_node("MineMiddle")._on_DropTargets_targets_complete(null, null)
+			get_node("MineBottom")._on_DropTargets_targets_complete(null, null)
+			balls[0].position = Vector2(-376, -4243)
 		if event.is_action_pressed("cheat_7"):
 			balls[0].position = Vector2(-150, 3700)
 		if event.is_action_pressed("cheat_8"):

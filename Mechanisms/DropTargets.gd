@@ -9,6 +9,7 @@ onready var targets := [
 	get_node("DropTarget2"),
 	get_node("DropTarget3"),
 ]
+onready var lamp := find_node("Lamp*")
 
 func _ready() -> void:
 	for i in targets:
@@ -25,6 +26,8 @@ func _on_target_hit(_target: Area2D, body: RigidBody2D) -> void:
 			num_up += 1
 	if num_up == 0:
 		emit_signal("targets_complete", self, body)
+		if lamp:
+			lamp.blink_for(1)
 
 func drop() -> void:
 	up = false

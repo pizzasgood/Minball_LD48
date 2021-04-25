@@ -1,0 +1,20 @@
+[remap]
+
+importer="aseprite_importer"
+type="SpriteFrames"
+path="res://.import/pump_lamp.aseprite-22a786c5e4d691bbce1251fe7a8a4c74.tres"
+
+[deps]
+
+source_file="res://Mechanisms/pump_lamp.aseprite"
+dest_files=[ "res://.import/pump_lamp.aseprite-22a786c5e4d691bbce1251fe7a8a4c74.tres" ]
+
+[params]
+
+mipmaps=true
+repeat=true
+filter=false
+anisotropic_filter=false
+convert_to_linear=false
+mirrored_repeat=false
+video_surface=false

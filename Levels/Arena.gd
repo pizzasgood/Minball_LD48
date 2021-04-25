@@ -6,6 +6,7 @@ onready var loop_path : Path2D = get_node("BossPath")
 onready var entry_path : Path2D = get_node("BossEntryPath")
 onready var spawn_point : PathFollow2D = entry_path.get_node("BossSpawn")
 onready var boss_tween : Tween = spawn_point.get_node("BossTween")
+onready var drain := find_node("Drain")
 var entry_duration = 2.0
 var loop_duration = 8.0
 var boss_in_the_loop := false
@@ -29,3 +30,7 @@ func _on_BossTween_tween_completed(_object: Object, _key: NodePath) -> void:
 		spawn_point.unit_offset = 0.0
 	boss_tween.interpolate_property(spawn_point, "unit_offset", 0.0, 1.0, loop_duration, Tween.TRANS_LINEAR)
 	boss_tween.start()
+
+func remove_drain() -> void:
+	if is_instance_valid(drain):
+		drain.banish()

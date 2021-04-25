@@ -9,14 +9,14 @@
 [ext_resource path="res://Mechanisms/Bumper.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 840.635, 56.1452 )
+extents = Vector2( 941.694, 86 )
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( -24.9452, 172.834, 24.9452, -172.834, 225.6, 207.382, 63.2538, 71.2719, -63.2538, -71.2719, -96.9051, 204.709, -45.4358, 62.3629, 45.4358, -62.3629, -52.3602, -58.9966, 118.921, 242.598, -118.921, -242.598, 415.587, 2.18396, 108.69, -264.597, -108.69, 264.597, 47.4206, 87.111, -58.7711, -157.427, 58.7711, 157.427, -98.1507, 385.108, -84.071, -30.1899, 84.071, 30.1899, 169.421, 348.243, -192.22, 210.341, 192.22, -210.341, 448.885, 383.919, -35.6359, 170.162, 35.6359, -170.162, 225.6, 207.382 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 198.741, 1134.66, 0, 0, 0, 0, 225.464, 207.147 )
 }
@@ -29,11 +29,16 @@ visible = false
 texture = ExtResource( 1 )
 
 [node name="Drain" parent="." instance=ExtResource( 7 )]
-position = Vector2( 163.934, 724.677 )
+position = Vector2( 163.934, 777.534 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drain"]
 position = Vector2( 58.7992, 19.5997 )
 shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Drain"]
+z_index = 1
+color = Color( 0.815686, 0.176471, 0.745098, 0.729412 )
+polygon = PoolVector2Array( -1000, -100, 1000, -100, 1000, 1000, -1000, 1000 )
 
 [node name="Ore" type="Node2D" parent="."]
 
@@ -84,10 +89,10 @@ position = Vector2( 516.31, 516.31 )
 position = Vector2( 147.998, 45.4084 )
 
 [node name="BossPath" type="Path2D" parent="."]
-curve = SubResource( 3 )
+curve = SubResource( 2 )
 
 [node name="BossEntryPath" type="Path2D" parent="."]
-curve = SubResource( 2 )
+curve = SubResource( 3 )
 
 [node name="BossSpawn" type="PathFollow2D" parent="BossEntryPath"]
 position = Vector2( 198.741, 1134.66 )

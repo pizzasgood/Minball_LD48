@@ -1,15 +1,127 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels/space.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Space.gd" type="Script" id=2]
+[ext_resource path="res://Mechanisms/Boulder.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Mechanisms/Drain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Mechanisms/OneWay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Mechanisms/FlipperLeft.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mechanisms/FlipperRight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Mechanisms/DropTargets.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Mechanisms/LampBentArrow.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Mechanisms/LampPower.tscn" type="PackedScene" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 61.4186, 34.2941 )
 
 [node name="Space" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 1 )
+
+[node name="Drain" parent="." instance=ExtResource( 4 )]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drain"]
+polygon = PoolVector2Array( -615.361, 172.566, -565.332, 324.424, -346.023, 212.121, -301.526, 167.624, -226.304, 271.451, -322.715, 414.479, -704.122, 406.003 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Drain"]
+polygon = PoolVector2Array( 197.234, 75.208, 177.984, 233.531, 84.1186, 217.419, 33.2643, 119.948, -75.8604, 145.375, 170.995, 474.868, 227.066, 258.072 )
 
 [node name="Ore" type="Node2D" parent="."]
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( -270.781, 72.116, -199.339, 43.8567, -132, 59, 80.2698, 102.707, -104.983, 334.839, -98.9542, 210.251, -140.485, 125.302, -193.342, 92.2662 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( -162.383, 335.597, -175.631, 198.488, -179.873, 159.597, -196.844, 137.677, -274.626, 122.121, -379.257, 167.141, -369.716, 179.488 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( -585.954, 192.365, -579.819, 30.4904, -498.646, -114.866, -373.619, -206.837, -284.565, -416.903, -186.94, -479.605, 70.5, -552, 362.569, -556.709, 334.412, -313.7, 488.562, -619.17, -679.579, -630.484, -635.927, 194.726 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2( 0, 1.25995 )
+polygon = PoolVector2Array( 158.068, 113.183, 200, -37, 194.83, -107.826, 167.05, -156.242, 109.904, -166.56, 81.3406, -277.873, 109.931, -320.759, 241, -390, 265, -317, 202.165, 127.042 )
+
+[node name="OneWay" parent="." instance=ExtResource( 5 )]
+position = Vector2( -254.792, 101.748 )
+rotation = -1.3905
+
+[node name="SolarControl" parent="." instance=ExtResource( 8 )]
+position = Vector2( -535.345, -40.6876 )
+rotation = -1.04933
+
+[node name="LampPower" parent="SolarControl" instance=ExtResource( 11 )]
+position = Vector2( -0.358215, 15.3093 )
+
+[node name="PowerControl" parent="." instance=ExtResource( 8 )]
+position = Vector2( 181.915, 13.5586 )
+rotation = 1.83259
+
+[node name="LampPower" parent="PowerControl" instance=ExtResource( 11 )]
+position = Vector2( -1.33332, 18.0238 )
+rotation = -3.14159
+
+[node name="LaserDoorControl" parent="." instance=ExtResource( 8 )]
+position = Vector2( -233.443, -444.8 )
+rotation = -0.556142
+up = false
+
+[node name="Boulder" parent="LaserDoorControl" instance=ExtResource( 3 )]
+position = Vector2( 70.0047, 85.5456 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LaserDoorControl/Boulder"]
+position = Vector2( 123.841, -32.1857 )
+rotation = 0.265434
+polygon = PoolVector2Array( 155.239, -14.0314, 83.26, 238.865, 118.612, 233.317, 190.598, -3.08981 )
+
+[node name="LampBentArrow" parent="LaserDoorControl" instance=ExtResource( 9 )]
+position = Vector2( -7.02618, 98.5629 )
+rotation = 1.97004
+scale = Vector2( -1, 1 )
+state = false
+
+[node name="FlipperLeft" parent="." instance=ExtResource( 6 )]
+position = Vector2( -584.43, 188.871 )
+
+[node name="FlipperLeft2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -377.799, -212.815 )
+
+[node name="FlipperLeft3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -107.093, 81.6795 )
+rotation = -0.448244
+
+[node name="FlipperRight" parent="." instance=ExtResource( 7 )]
+position = Vector2( -378.632, 183.525 )
+
+[node name="FlipperRight2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 159.255, 115.891 )
+rotation = 0.496976
+
+[node name="DeathRaySensor" type="Area2D" parent="."]
+position = Vector2( 299.697, -343.473 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathRaySensor"]
+position = Vector2( -5.04541, -9.24988 )
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="LaserBeam" type="Polygon2D" parent="."]
+z_index = 2
+color = Color( 0.666667, 1, 0.87451, 1 )
+polygon = PoolVector2Array( 352, -317, 248, -317, 248, 10000, 352, 10000 )
+
+[node name="LaserLamp" parent="." instance=ExtResource( 9 )]
+position = Vector2( 214, -438 )
+state = false
+
+[connection signal="targets_complete" from="SolarControl" to="." method="_on_SolarControl_targets_complete"]
+[connection signal="targets_complete" from="PowerControl" to="." method="_on_PowerControl_targets_complete"]
+[connection signal="body_entered" from="DeathRaySensor" to="." method="_on_DeathRaySensor_body_entered"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

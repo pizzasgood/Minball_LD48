@@ -12,57 +12,58 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 800.0
+margin_bottom = 1000.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 1016.0
-margin_bottom = 592.0
+margin_right = 792.0
+margin_bottom = 992.0
 size_flags_horizontal = 3
 
 [node name="Header" type="Label" parent="PanelContainer/VBoxContainer"]
-margin_right = 1008.0
+margin_right = 784.0
 margin_bottom = 14.0
 custom_colors/font_color = Color( 1, 0.866667, 0.0666667, 1 )
 text = "Minball"
 
 [node name="Body" type="Label" parent="PanelContainer/VBoxContainer"]
 margin_top = 18.0
-margin_right = 1008.0
-margin_bottom = 151.0
-text = "This is my entry for the Ludum Dare 48 Compo, a contest to build a game in 48 hours.  This event's theme was: Deeper and deeper.
+margin_right = 784.0
+margin_bottom = 168.0
+text = "This is my entry for the Ludum Dare 48 Compo, a contest to build a game in 48 hours.
+This event's theme was: Deeper and deeper.
 
 Copyright © 2021 Pizzasgood
 
 This software is released under the GPL v3.
 https://www.gnu.org/licenses/gpl.txt
 
-The following software is used in Minball:"
+The following third party software is used in Minball:"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
-margin_top = 155.0
-margin_right = 1008.0
-margin_bottom = 159.0
+margin_top = 172.0
+margin_right = 784.0
+margin_bottom = 176.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 163.0
-margin_right = 1008.0
-margin_bottom = 550.0
+margin_top = 180.0
+margin_right = 784.0
+margin_bottom = 950.0
 size_flags_vertical = 3
 
 [node name="Licenses" parent="PanelContainer/VBoxContainer/ScrollContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1008.0
+margin_right = 784.0
 
 [node name="ResumeButton" type="Button" parent="PanelContainer/VBoxContainer"]
-margin_top = 554.0
-margin_right = 1008.0
-margin_bottom = 584.0
+margin_top = 954.0
+margin_right = 784.0
+margin_bottom = 984.0
 text = "Return"

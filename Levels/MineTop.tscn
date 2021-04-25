@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Mechanisms/FlipperLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/mine_top.png" type="Texture" id=2]
@@ -8,13 +8,14 @@
 [ext_resource path="res://Mechanisms/Boulder.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Mechanisms/Rollovers.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mechanisms/FlipperRight.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Mechanisms/LampPump.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Mechanisms/DestructableBumper.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Mechanisms/DropTargets.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Mechanisms/Bumper.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Levels/MineTop.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 900.905, 100.764 )
+extents = Vector2( 998.199, 86.5507 )
 
 [node name="MineTop" type="Node2D"]
 script = ExtResource( 14 )
@@ -77,6 +78,11 @@ position = Vector2( 165.187, 534.959 )
 position = Vector2( 0, 0.407532 )
 shape = SubResource( 1 )
 
+[node name="Polygon2D" type="Polygon2D" parent="Drain"]
+z_index = 1
+color = Color( 0.156863, 0.152941, 0.509804, 0.729412 )
+polygon = PoolVector2Array( -1000, -100, 1000, -100, 1000, 1000, -1000, 1000 )
+
 [node name="Plunger" parent="." instance=ExtResource( 4 )]
 position = Vector2( 544.293, -202.483 )
 
@@ -95,6 +101,9 @@ position = Vector2( 382.027, -90.9097 )
 [node name="DropTargets" parent="." instance=ExtResource( 11 )]
 position = Vector2( 249.048, 129.439 )
 rotation = 0.419281
+
+[node name="LampPump" parent="DropTargets" instance=ExtResource( 9 )]
+position = Vector2( -0.40274, 15.5444 )
 
 [node name="DropTargets2" parent="." instance=ExtResource( 11 )]
 position = Vector2( -53.1253, -39.8833 )

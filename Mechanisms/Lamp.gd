@@ -4,6 +4,7 @@ export var state := true
 
 onready var light : Light2D = get_node("Light2D")
 onready var sprite : AnimatedSprite = get_node("AnimatedSprite")
+onready var timer : Timer = get_node("Timer")
 var on_frame := 0
 var off_frame := 1
 
@@ -31,3 +32,11 @@ func light_set(new_state: bool) -> void:
 
 func blink() -> void:
 	sprite.playing = true
+
+func blink_for(seconds: float) -> void:
+	blink()
+	timer.wait_time = seconds
+	timer.start()
+
+func _on_Timer_timeout() -> void:
+	light_off()

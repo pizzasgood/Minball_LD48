@@ -1,0 +1,20 @@
+[remap]
+
+importer="aseprite_importer"
+type="SpriteFrames"
+path="res://.import/bent_arrow_lamp.aseprite-e417a7d75891f0320b3ec4a940c1e1dc.tres"
+
+[deps]
+
+source_file="res://Mechanisms/bent_arrow_lamp.aseprite"
+dest_files=[ "res://.import/bent_arrow_lamp.aseprite-e417a7d75891f0320b3ec4a940c1e1dc.tres" ]
+
+[params]
+
+mipmaps=true
+repeat=true
+filter=false
+anisotropic_filter=false
+convert_to_linear=false
+mirrored_repeat=false
+video_surface=false

@@ -1,0 +1,20 @@
+[remap]
+
+importer="aseprite_importer"
+type="SpriteFrames"
+path="res://.import/power_lamp.aseprite-db61020da55871710134ff31bcf61add.tres"
+
+[deps]
+
+source_file="res://Mechanisms/power_lamp.aseprite"
+dest_files=[ "res://.import/power_lamp.aseprite-db61020da55871710134ff31bcf61add.tres" ]
+
+[params]
+
+mipmaps=true
+repeat=true
+filter=false
+anisotropic_filter=false
+convert_to_linear=false
+mirrored_repeat=false
+video_surface=false
