@@ -9,6 +9,7 @@
 radius = 24.0
 
 [node name="DestructableBumper" type="RigidBody2D"]
+z_index = -1
 collision_mask = 2
 mode = 3
 contacts_reported = 1

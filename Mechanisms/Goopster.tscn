@@ -6,6 +6,7 @@
 [ext_resource path="res://SFX/water.wav" type="AudioStream" id=4]
 
 [node name="Goopster" type="RigidBody2D"]
+z_index = 2
 collision_mask = 2
 mode = 3
 contacts_reported = 8

@@ -1,14 +1,30 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/Rocket.gd" type="Script" id=1]
 [ext_resource path="res://Mechanisms/OneWay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Mechanisms/Plunger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Mechanisms/glow_360.png" type="Texture" id=4]
+[ext_resource path="res://SFX/water.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.3033, 54.4842 )
 
 [node name="Rocket" type="KinematicBody2D"]
 script = ExtResource( 1 )
+
+[node name="Exhaust" type="Polygon2D" parent="."]
+position = Vector2( 6, 2 )
+color = Color( 1, 0.580392, 0.356863, 1 )
+polygon = PoolVector2Array( -35.029, 542.158, -97.2238, 620.624, -67.5588, 605.792, -97.2238, 711.738, -71.7967, 684.192, -88.7481, 860.063, -65.4399, 804.971, -3.73795, 1183.7, 55.0087, 805.717, 84.3756, 862.07, 65.7236, 682.694, 99.059, 711.267, 66.9142, 604.514, 102.281, 628.47, 44.346, 542.788 )
+
+[node name="Light2D" type="Light2D" parent="Exhaust"]
+position = Vector2( 8.81949, 734.193 )
+scale = Vector2( 12.9889, 9.67029 )
+texture = ExtResource( 4 )
+
+[node name="BG" type="Polygon2D" parent="."]
+color = Color( 0.308594, 0.0892029, 0.0892029, 1 )
+polygon = PoolVector2Array( 21.6342, -297.291, 89.6149, -96.546, 0.709335, 174.172, -59.2229, -40.0862, -27.8632, -298.706 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 230.963, 8.97571 )
@@ -33,6 +49,33 @@ collision_mask = 2
 shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Hull" type="Polygon2D" parent="."]
+color = Color( 0.592157, 0.0431373, 0.0431373, 1 )
+polygon = PoolVector2Array( -16.9991, -335.094, -80.4868, -227.88, -87.0929, -74.7433, -85.203, 502.3, -42.9956, 551.437, 59.688, 552.067, 106.305, 507.97, 101.265, -75.3733, 47.0888, -70.3336, 29.4499, -52.6947, 18.1107, -26.8664, 18.1107, 89.0464, -17.7971, 89.0464 )
+
+[node name="Hull2" type="Polygon2D" parent="."]
+color = Color( 0.592157, 0.0431373, 0.0431373, 1 )
+polygon = PoolVector2Array( 15.6378, -334.827, 17.7567, -170.61, 47.9514, -120.286, 96.157, -123.994, 69.1407, -235.238 )
+
+[node name="NoseCone" type="Polygon2D" parent="."]
+color = Color( 0.592157, 0.0431373, 0.0431373, 1 )
+polygon = PoolVector2Array( -17.875, -333.546, 0.0824738, -362.516, 16.651, -332.851, 17.147, -310.925, -18.4703, -311.223 )
+
+[node name="TailFin" type="Polygon2D" parent="."]
+color = Color( 0.109804, 0.0588235, 0.0588235, 1 )
+polygon = PoolVector2Array( -86, 254.5, -231.5, 603, -85.5, 502.5 )
+
+[node name="TailFin2" type="Polygon2D" parent="."]
+color = Color( 0.109804, 0.0588235, 0.0588235, 1 )
+polygon = PoolVector2Array( 104, 262, 106.5, 508.5, 259, 607 )
+
+[node name="OneWay2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.41577, -302.04 )
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
 
 [connection signal="body_entered" from="Sensor" to="." method="_on_Sensor_body_entered"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

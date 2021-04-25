@@ -105,5 +105,31 @@ lookahead = 320.0
 position = Vector2( -346.059, 53.5143 )
 force = 1500.0
 
+[node name="LevelArt" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( -371.221, -397.269, -363.212, 63.2505, -331.175, 53.9067, -329.154, 37.7553, -326.481, -25.9439, -304.654, -57.5709, -137.61, -129.734, -99.7473, -102.561, -126.029, -76.7252, -152.31, 41.7644, -302.69, 269.587, -312.14, 320.614, -221.425, 448.496, -150.24, 479.994, -157.799, 495.113, -510.577, 474.954, -503.123, -396.733 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( 230.492, -30.5354, 193.627, -19.2379, 146.059, 30.7088, 156.167, 58.0605, 187.681, 113.953, 291.737, 86.0069, 282.223, 11.0868 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( 502.282, -68.534, 482.483, -70.6553, 472.584, -35.3, 394.802, 193.096, 411.065, 202.995, 507.232, 141.477, 531.273, 84.2011, 525.617, 19.8543 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( 408.303, -328.812, 455.979, -269.482, 531.201, -169.893, 594.768, -36.4004, 628.671, 127.816, 637.147, 264.487, 626.552, 373.612, 592.65, 456.25, 510.012, 503.926, 521.666, 530.412, 935.641, 527.671, 939.879, -349.564 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( -63.5875, 529.745, -38.9828, 527.364, 124.52, 599.59, 114.995, 628.164, -47.7134, 552.762 )
+
+[node name="Polygon2D6" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( 426.126, 557.524, 401.521, 557.524, 304.69, 601.972, 319.77, 621.814, 415.808, 579.748 )
+
 [connection signal="targets_complete" from="DropTargets" to="." method="_on_DropTargets_targets_complete"]
 [connection signal="tween_completed" from="BossEntryPath/BossSpawn/BossTween" to="." method="_on_BossTween_tween_completed"]

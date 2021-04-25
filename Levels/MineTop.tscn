@@ -119,6 +119,10 @@ position = Vector2( -17.96, -8.86402 )
 rotation = 0.143489
 polygon = PoolVector2Array( -70.1124, -23.3023, -94.7455, 16.5634, -112.229, 107.408, -105.978, 171.479, -155.168, 173.719, -127.162, -37.8852 )
 
+[node name="Polygon2D" type="Polygon2D" parent="DropTargets2/Boulder2"]
+color = Color( 0.541176, 0.541176, 0.541176, 1 )
+polygon = PoolVector2Array( -87.1913, -39.1937, -113.568, -4.97754, -144.39, 83.2271, -147.117, 140.723, -157.111, 154.237, -187.451, 149.91, -194.565, 134.789, -139.929, -59.2882, -118.493, -64.8586, -94.3158, -56.3764 )
+
 [node name="DropTargets3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 442.536, -22.5822 )
 rotation = 0.959303
@@ -129,6 +133,10 @@ rotation = -0.959303
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DropTargets3/Boulder3"]
 polygon = PoolVector2Array( 495.66, 38.2933, 493.539, 87.0837, 467.376, 203.049, 506.952, 194.746, 526.43, 29.932 )
+
+[node name="Polygon2D" type="Polygon2D" parent="DropTargets3/Boulder3"]
+color = Color( 0.541176, 0.541176, 0.541176, 1 )
+polygon = PoolVector2Array( 468.768, 197.189, 493.309, 87.2272, 496.14, 37.2018, 502.276, 17.8524, 516.434, 23.5156, 525.401, 32.9544, 507.939, 186.806, 496.612, 201.908, 477.263, 203.324 )
 
 [node name="HatchControl" parent="." instance=ExtResource( 11 )]
 position = Vector2( 51.8725, -341.247 )
@@ -143,6 +151,10 @@ rotation = 0.28359
 position = Vector2( -91.874, -21.0116 )
 rotation = 0.229386
 polygon = PoolVector2Array( 296.14, -390.44, 75.8852, -393.545, 54.0018, -419.087, 309.794, -417.857 )
+
+[node name="Polygon2D" type="Polygon2D" parent="HatchControl/Boulder"]
+color = Color( 0.541176, 0.541176, 0.541176, 1 )
+polygon = PoolVector2Array( 81.3104, -385.154, 264.742, -339.13, 288.201, -350.291, 272.839, -365.507, 59.3239, -415.628 )
 
 [node name="LampArrow" parent="HatchControl" instance=ExtResource( 12 )]
 position = Vector2( 3.68399, 33.2924 )
@@ -195,5 +207,27 @@ position = Vector2( 246.979, 74.0412 )
 
 [node name="Bumper3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 291.811, 95.0174 )
+
+[node name="LevelArt" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( 527.14, -121.979, 527.14, -212.858, 521.584, -267.226, 510.472, -306.911, 493.805, -334.691, 468.406, -356.915, 417.609, -356.518, 439.039, -336.675, 457.691, -297.387, 470.787, -219.604, 459.675, -158.489, 435.468, -127.138, 380.305, -103.724, 385.068, -81.8971, 402.926, -87.8498, 497.376, 44.3013, 560.079, 20.4903, 611.669, 20.0934, 637, 64, 647, 107, 598.5, 161.5, 468.5, 197.5, 455, 211, 521, 261, 550.5, 302.5, 576, 425, 707, 426.5, 683.619, -433.264, 300.406, -429.488, 296.63, -394.565, 417.936, -402.76, 466.443, -399.925, 497.311, -391.736, 521.879, -373.467, 544.558, -340.394, 559.362, -282.122, 560.937, -238.025, 561.252, -120.853 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( 147.12, -398.355, -19.474, -303.023, -140.29, -204.388, -225.239, -105.754, -264.881, 0.432335, -292.726, 133.047, -298.389, 254.806, -264.736, 257.423, -260.241, 199.738, -117.152, 184.006, 17.6953, 288.138, -4.77933, 329.341, -98.4235, 312.111, -228.776, 309.863, -329.679, 345.88, -356.437, 423.76, -459.89, 424.764, -448.18, -438.495, 68.4029, -430.486 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( -84.962, -196.525, -129.51, -150.564, -158.501, -91.1666, -171.229, -14.0919, -101.933, -4.89954, -3.64468, -87.631, 9.79034, -91.8737, 13.3259, -123.693, -27.6863, -142.785 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( 274.745, 323.436, 349.665, 290.732, 425.775, 248.515, 463.234, 277.651, 487.613, 347.22, 481.073, 390.031, 457.289, 422.14, 431.721, 434.032, 398.423, 432.843, 356.801, 402.518, 290.205, 349.598 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( 206.083, 101.481, 298.007, 144.615, 287.4, 46.3268 )
 
 [connection signal="targets_complete" from="DropTargets" to="." method="_on_DropTargets_targets_complete"]

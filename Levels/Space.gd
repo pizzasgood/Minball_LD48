@@ -6,6 +6,8 @@ onready var laser_lamp := get_node("LaserLamp")
 onready var tween : Tween = get_node("Tween")
 onready var arena := find_parent("World").get_node("Arena")
 onready var laser_beam := get_node("LaserBeam")
+onready var battery_meter := get_node("Battery/Green")
+onready var laser_indicator := get_node("Laser/IndicatorOn")
 
 export var distance_to_depths := 7550
 export var speed := 2000.0
@@ -17,6 +19,8 @@ var ball_collision := []
 
 func _ready() -> void:
 	laser_beam.visible = false
+	battery_meter.visible = false
+	laser_indicator.visible = false
 
 func _process(_delta: float) -> void:
 	if laser_beam.visible:
@@ -28,12 +32,12 @@ func _on_DeathRaySensor_body_entered(body: RigidBody2D) -> void:
 
 func _on_PowerControl_targets_complete(_targets, _body) -> void:
 	power_ready = true
-	# TODO: light up laser turret
+	laser_indicator.visible = true
 	update_door()
 
 func _on_SolarControl_targets_complete(_targets, _body) -> void:
 	solar_ready = true
-	# TODO: light up solar panels
+	battery_meter.visible = true
 	update_door()
 
 func _on_Tween_tween_completed(_object: Object, _key: NodePath) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Levels/space.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Space.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Mechanisms/Bumper.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Mechanisms/LampBentArrow.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Mechanisms/LampPower.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Mechanisms/glow_360.png" type="Texture" id=12]
+[ext_resource path="res://Mechanisms/Girder1x.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 61.4186, 34.2941 )
@@ -80,10 +82,58 @@ position = Vector2( 123.841, -32.1857 )
 rotation = 0.265434
 polygon = PoolVector2Array( 155.239, -14.0314, 83.26, 238.865, 118.612, 233.317, 190.598, -3.08981 )
 
+[node name="Polygon2D" type="Polygon2D" parent="LaserDoorControl/Boulder"]
+color = Color( 0.541176, 0.541176, 0.541176, 1 )
+polygon = PoolVector2Array( 278.908, -8.45801, 142.823, 220.599, 169.775, 236.303, 313.038, 7.51208 )
+
 [node name="LampBentArrow" parent="LaserDoorControl" instance=ExtResource( 10 )]
 position = Vector2( -7.02618, 98.5629 )
 rotation = 1.97004
 scale = Vector2( -1, 1 )
+
+[node name="DeathRaySensor" type="Area2D" parent="."]
+position = Vector2( 299.697, -343.473 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathRaySensor"]
+position = Vector2( -5.04541, -9.24988 )
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="LaserBeam" type="Polygon2D" parent="."]
+visible = false
+z_index = 2
+color = Color( 0.666667, 1, 0.87451, 1 )
+polygon = PoolVector2Array( 352, -317, 248, -317, 248, 10000, 352, 10000 )
+
+[node name="LaserLamp" parent="." instance=ExtResource( 10 )]
+position = Vector2( 214, -438 )
+state = false
+
+[node name="Bumper" parent="." instance=ExtResource( 9 )]
+position = Vector2( 91, -250 )
+
+[node name="Bumper2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 104, -196 )
+
+[node name="LevelArt" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.768627, 0.768627, 0.768627, 1 )
+polygon = PoolVector2Array( -586.398, 191.502, -579.5, 30, -498.359, -115.225, -378.64, -204.22, -374.402, -225.939, -379.17, -295.863, -350.035, -367.377, -284.878, -417.702, -146.618, -503.518, -41.7308, -490.805, 71.6318, -552.253, 361.925, -555.961, 335.438, -314.934, 367.785, -277.883, 432.247, -593.333, -99.818, -591.674, -337.674, -461.419, -622.724, 19.9567, -626.565, 193.956 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.768627, 0.768627, 0.768627, 1 )
+polygon = PoolVector2Array( 264.291, -316.28, 240.507, -389.416, 110.883, -319.847, 81.1528, -276.441, 109.694, -165.25, 166.776, -155.142, 194.128, -105.79, 200.074, -35.0323, 157.857, 113.024, 201.263, 127.294, 234.14, -69.9466, 183.286, -264.888, 233.296, -279.591 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.768627, 0.768627, 0.768627, 1 )
+polygon = PoolVector2Array( -270.977, 71.4483, -200.266, 43.8712, -134.505, 60.1346, 78.3337, 102.561, -104.807, 334.492, -97.7359, 210.041, -141.576, 125.188, -193.195, 91.9544 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="LevelArt"]
+color = Color( 0.768627, 0.768627, 0.768627, 1 )
+polygon = PoolVector2Array( -162.863, 335.049, -178.737, 159.641, -197.786, 136.624, -277.156, 123.131, -382.718, 168.372 )
 
 [node name="FlipperLeft" parent="." instance=ExtResource( 6 )]
 position = Vector2( -584.43, 188.871 )
@@ -102,30 +152,112 @@ position = Vector2( -378.632, 183.525 )
 position = Vector2( 159.255, 115.891 )
 rotation = 0.496976
 
-[node name="DeathRaySensor" type="Area2D" parent="."]
-position = Vector2( 299.697, -343.473 )
-collision_mask = 2
+[node name="SolarPanel" type="Node2D" parent="."]
+position = Vector2( -622.695, 173.141 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathRaySensor"]
-position = Vector2( -5.04541, -9.24988 )
-shape = SubResource( 1 )
+[node name="Girder1x" parent="SolarPanel" instance=ExtResource( 13 )]
+position = Vector2( -33, 1 )
 
-[node name="Tween" type="Tween" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="SolarPanel"]
+color = Color( 0.117647, 0.0745098, 0.160784, 1 )
+polygon = PoolVector2Array( -56.3619, 47.7862, -254.888, 48.5353, -253.389, -44.3597, -55.6128, -46.6072 )
 
-[node name="LaserBeam" type="Polygon2D" parent="."]
-z_index = 2
-color = Color( 0.666667, 1, 0.87451, 1 )
-polygon = PoolVector2Array( 352, -317, 248, -317, 248, 10000, 352, 10000 )
+[node name="SolarPanel2" type="Node2D" parent="."]
+position = Vector2( -617.976, 60.82 )
 
-[node name="LaserLamp" parent="." instance=ExtResource( 10 )]
-position = Vector2( 214, -438 )
-state = false
+[node name="Girder1x" parent="SolarPanel2" instance=ExtResource( 13 )]
+position = Vector2( -33, 1 )
 
-[node name="Bumper" parent="." instance=ExtResource( 9 )]
-position = Vector2( 91, -250 )
+[node name="Polygon2D" type="Polygon2D" parent="SolarPanel2"]
+color = Color( 0.117647, 0.0745098, 0.160784, 1 )
+polygon = PoolVector2Array( -56.3619, 47.7862, -254.888, 48.5353, -253.389, -44.3597, -55.6128, -46.6072 )
 
-[node name="Bumper2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 104, -196 )
+[node name="SolarPanel3" type="Node2D" parent="."]
+position = Vector2( -692.565, -47.5982 )
+rotation = 0.549374
+
+[node name="Girder1x" parent="SolarPanel3" instance=ExtResource( 13 )]
+position = Vector2( -33, 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="SolarPanel3"]
+color = Color( 0.117647, 0.0745098, 0.160784, 1 )
+polygon = PoolVector2Array( -56.3619, 47.7862, -254.888, 48.5353, -253.389, -44.3597, -55.6128, -46.6072 )
+
+[node name="SolarPanel4" type="Node2D" parent="."]
+position = Vector2( -623.5, -155.038 )
+rotation = 0.549374
+
+[node name="Girder1x" parent="SolarPanel4" instance=ExtResource( 13 )]
+position = Vector2( -33, 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="SolarPanel4"]
+color = Color( 0.117647, 0.0745098, 0.160784, 1 )
+polygon = PoolVector2Array( -56.3619, 47.7862, -254.888, 48.5353, -253.389, -44.3597, -55.6128, -46.6072 )
+
+[node name="SolarPanel5" type="Node2D" parent="."]
+position = Vector2( -484.907, -211.606 )
+rotation = 0.549374
+
+[node name="Girder1x" parent="SolarPanel5" instance=ExtResource( 13 )]
+position = Vector2( -33, 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="SolarPanel5"]
+color = Color( 0.117647, 0.0745098, 0.160784, 1 )
+polygon = PoolVector2Array( -56.3619, 47.7862, -254.888, 48.5353, -253.389, -44.3597, -55.6128, -46.6072 )
+
+[node name="SolarPanel6" type="Node2D" parent="."]
+position = Vector2( -427.632, -307.066 )
+rotation = 0.549374
+
+[node name="Girder1x" parent="SolarPanel6" instance=ExtResource( 13 )]
+position = Vector2( -33, 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="SolarPanel6"]
+color = Color( 0.117647, 0.0745098, 0.160784, 1 )
+polygon = PoolVector2Array( -56.3619, 47.7862, -254.888, 48.5353, -253.389, -44.3597, -55.6128, -46.6072 )
+
+[node name="Battery" type="Polygon2D" parent="."]
+color = Color( 0.231373, 0.231373, 0.231373, 1 )
+polygon = PoolVector2Array( -522.077, -153.168, -621.97, 19.2672, -708.782, -35.4363, -602.943, -204.304, -567.569, -181.935, -564.116, -187.261, -547.959, -177.726, -551.254, -171.618 )
+
+[node name="Red" type="Polygon2D" parent="Battery"]
+position = Vector2( 0.445496, -2.6727 )
+color = Color( 0.717647, 0.552941, 0.360784, 1 )
+polygon = PoolVector2Array( -660.069, -40.2686, -637.351, -25.1233, -560.733, -148.513, -585.233, -161.431 )
+
+[node name="Green" type="Polygon2D" parent="Battery"]
+visible = false
+position = Vector2( 0.445496, -2.6727 )
+color = Color( 0.180392, 0.45098, 0.168627, 1 )
+polygon = PoolVector2Array( -660.069, -40.2686, -637.351, -25.1233, -560.733, -148.513, -585.233, -161.431 )
+
+[node name="Light2D" type="Light2D" parent="Battery/Green"]
+position = Vector2( -610.444, -93.0218 )
+rotation = 0.537149
+scale = Vector2( 3.21403, 3.96427 )
+texture = ExtResource( 12 )
+color = Color( 0.219608, 1, 0, 1 )
+
+[node name="Laser" type="Node2D" parent="."]
+position = Vector2( 301.041, -280.859 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Laser"]
+color = Color( 0.258824, 0.203922, 0.203922, 1 )
+polygon = PoolVector2Array( -37.1893, -36.6344, -89.2756, 24.6588, -46.0175, 230.04, -18.2678, 239.29, -20.7905, 213.222, -33.404, 209.858, -66.6481, 27.4873, -34.1212, -13.5249, -0.752258, 253.763, 33.0269, -13.8202, 62.2926, 28.7345, 34.9202, 211.846, 20.2902, 215.15, 16.0428, 240.162, 42.9432, 234.971, 84.4736, 24.959, 34.7086, -36.5244 )
+
+[node name="IndicatorOff" type="Polygon2D" parent="Laser"]
+color = Color( 0.313726, 0.113725, 0.113725, 1 )
+polygon = PoolVector2Array( -19.4199, -19.7002, 17.7477, -19.7002, 0.108856, 69.7542 )
+
+[node name="IndicatorOn" type="Polygon2D" parent="Laser"]
+visible = false
+color = Color( 0, 0.905882, 1, 1 )
+polygon = PoolVector2Array( -19.4199, -19.7002, 17.7477, -19.7002, 0.108856, 69.7542 )
+
+[node name="Light2D" type="Light2D" parent="Laser/IndicatorOn"]
+position = Vector2( 2.17477, 1.88107 )
+scale = Vector2( 4.86538, 5.91389 )
+texture = ExtResource( 12 )
 
 [connection signal="targets_complete" from="SolarControl" to="." method="_on_SolarControl_targets_complete"]
 [connection signal="targets_complete" from="PowerControl" to="." method="_on_PowerControl_targets_complete"]

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export var hp := 15
+export var hp := 10
 export var force := 750.0
 
 var flash_duration := 1.0

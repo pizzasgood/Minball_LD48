@@ -140,12 +140,6 @@ rotation = -4.10143
 position = Vector2( 379.859, 693.332 )
 rotation = -4.27277
 
-[node name="FlipperLeft2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 44.1371, 685.83 )
-
-[node name="FlipperRight3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 372.584, 727.394 )
-
 [node name="Rocket" parent="." instance=ExtResource( 7 )]
 position = Vector2( -248.115, 132.035 )
 
@@ -186,3 +180,17 @@ rotation = -1.51103
 position = Vector2( 2.4346, 4.30609 )
 rotation = -1.72103
 scale = Vector2( 1, 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( 70.0127, 755.105, 19.1214, 738.899, -675.819, 736.183, -676.273, 789.56, 12.4215, 788.719, 53.6254, 789.56 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color( 0.333333, 0.239216, 0.160784, 1 )
+polygon = PoolVector2Array( 307.08, 787.054, 308.202, 756.748, 364.5, 713.5, 373.549, 724.094, 829.307, 723.57, 828.571, 786.361 )
+
+[node name="FlipperLeft2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 44.1371, 685.83 )
+
+[node name="FlipperRight3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 372.584, 727.394 )
