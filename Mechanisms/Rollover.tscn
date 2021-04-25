@@ -6,7 +6,7 @@
 [ext_resource path="res://Mechanisms/Rollover.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1.5, 17.5 )
+extents = Vector2( 1.5, 10 )
 
 [node name="Rollover" type="Area2D"]
 script = ExtResource( 4 )

@@ -23,7 +23,11 @@ func light_toggle() -> bool:
 func light_set(new_state: bool) -> void:
 	state = new_state
 	light.enabled = state
+	sprite.playing = false
 	if state:
 		sprite.frame = on_frame
 	else:
 		sprite.frame = off_frame
+
+func blink() -> void:
+	sprite.playing = true

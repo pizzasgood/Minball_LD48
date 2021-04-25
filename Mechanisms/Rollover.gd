@@ -24,3 +24,6 @@ func update() -> void:
 func set_to(new_state: bool) -> void:
 	state = new_state
 	update()
+
+func blink() -> void:
+	lamp.blink()

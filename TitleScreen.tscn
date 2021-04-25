@@ -14,31 +14,31 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-margin_left = 213.0
+margin_left = 184.0
 margin_top = 432.0
-margin_right = 587.0
+margin_right = 700.0
 margin_bottom = 568.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 366.0
+margin_right = 508.0
 margin_bottom = 128.0
 
 [node name="Title" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_right = 358.0
+margin_right = 500.0
 margin_bottom = 14.0
 text = "Minball"
 align = 1
 
 [node name="Image" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 18.0
-margin_right = 358.0
+margin_right = 500.0
 margin_bottom = 18.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 22.0
-margin_right = 358.0
+margin_right = 500.0
 margin_bottom = 120.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
@@ -64,15 +64,17 @@ text = "Exit"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 margin_left = 58.0
-margin_right = 358.0
+margin_right = 500.0
 margin_bottom = 98.0
 
 [node name="Introduction" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
-margin_right = 300.0
-margin_bottom = 48.0
-text = "Introduction to the game goes here.
+margin_right = 442.0
+margin_bottom = 82.0
+text = "Descend through the mine and collect the golden orbs.
 
-Maybe summarize the controls or something..."
+Drain the water and open passages by hitting the drop targets.
+
+Control the flippers with your mouse buttons, arrow keys, or A and D."
 
 [node name="AboutWindow" parent="." instance=ExtResource( 2 )]
 visible = false

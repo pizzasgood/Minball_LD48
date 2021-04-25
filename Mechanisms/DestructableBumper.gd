@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export var hp := 3
+export var hp := 1
 export var force := 750.0
 
 onready var sfx : AudioStreamPlayer2D = find_node("SFX")

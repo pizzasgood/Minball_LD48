@@ -8,11 +8,15 @@ onready var targets := [
 	get_node("Rollover2"),
 	get_node("Rollover3"),
 ]
+onready var lamp_1up : Node2D = get_node("Lamp1Up")
+onready var timer : Timer = get_node("Timer")
+onready var sfx : AudioStreamPlayer2D = get_node("SFX")
 
 func _ready() -> void:
 	for i in targets:
 		i.connect("target_hit", self, "_on_target_hit")
 	set_targets(false)
+	lamp_1up.light_set(false)
 
 func _on_target_hit(_target: Area2D, body: RigidBody2D) -> void:
 	var num_up = 0
@@ -21,10 +25,19 @@ func _on_target_hit(_target: Area2D, body: RigidBody2D) -> void:
 			num_up += 1
 	if num_up == len(targets):
 		emit_signal("targets_complete", self, body)
-		# TODO: flash in celebration
-		set_targets(false)
-		print("YAY!  New ball!")
-		world.extra_balls += 1
+		filled()
+
+func filled() -> void:
+	world.extra_balls += 1
+	for i in targets:
+		i.blink()
+	lamp_1up.blink()
+	sfx.play()
+	timer.start()
+
+func _on_Timer_timeout() -> void:
+	set_targets(false)
+	lamp_1up.light_set(false)
 
 func _unhandled_input(event: InputEvent) -> void:
 	# TODO: my GUI is gobbling my mouse events!
