@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Mechanisms/goopster.aseprite" type="SpriteFrames" id=1]
+[ext_resource path="res://Mechanisms/Goopster.gd" type="Script" id=2]
+[ext_resource path="res://SFX/bumper.wav" type="AudioStream" id=3]
+[ext_resource path="res://SFX/water.wav" type="AudioStream" id=4]
+
+[node name="Goopster" type="RigidBody2D"]
+collision_mask = 2
+mode = 3
+contacts_reported = 8
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -116.934, 0.983437, -116.227, -13.5123, -109.863, -28.3615, -99.9638, -41.7965, -89.7107, -52.0496, -86.8823, -60.8884, -88.6501, -74.3234, -86.8823, -88.8191, -78.397, -98.0115, -67.0833, -104.375, -61.6159, -104.413, -60.0267, -116.332, -48.78, -126.014, -38.0706, -127.589, -25.1565, -127.904, -13.5022, -134.519, 0.356949, -137.984, 17.6809, -137.669, 32.7999, -133.259, 43.1943, -122.55, 46.3441, -106.171, 53.5886, -103.336, 67.7627, -102.076, 78.1571, -93.8863, 86.6615, -84.1219, 90.7563, -74.0426, 93.2761, -58.2935, 92.9613, -44.4344, 83.5118, -29.0004, 75.6373, -12.6214, 71.5426, 1.23775, 69.9677, 13.207, 77.5273, 24.5463, 79.1022, 35.8856, 74.3775, 47.2249, 64.2981, 54.1544, 57.9985, 56.6743, 49.809, 71.1634, 42.2495, 79.9828, 33.43, 88.8023, 15.4762, 96.6768, 1.30205, 96.3618, -10.3522, 79.6678, -21.0616, 68.3286, -34.6057, 57.6192, -52.5596, 52.8945, -73.0333, 49.1147, -87.5224, 49.1147, -101.067, 46.5949, -113.666, 39.0354, -119.965, 29.586, -122.485, 17.6167, -121.855, 6.59241 )
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="SFX2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_Goopster_body_entered"]
+[connection signal="finished" from="SFX2" to="." method="_on_SFX2_finished"]

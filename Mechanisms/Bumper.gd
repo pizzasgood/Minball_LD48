@@ -9,4 +9,4 @@ func _on_Bumper_body_entered(body: RigidBody2D) -> void:
 		return
 	if body.is_in_group("balls"):
 		sfx.play()
-		body.apply_central_impulse(force * (body.position - position).normalized())
+		body.apply_central_impulse(force * (body.global_position - global_position).normalized())

@@ -36,3 +36,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_node("MineMiddle")._on_DropTargets_targets_complete(null, null)
 		if event.is_action_pressed("cheat_3"):
 			get_node("MineBottom")._on_DropTargets_targets_complete(null, null)
+		if event.is_action_pressed("cheat_4"):
+			get_node("Arena")._on_DropTargets_targets_complete(null, null)
+		if event.is_action_pressed("cheat_9"):
+			balls[0].position = Vector2(-150, 2700)

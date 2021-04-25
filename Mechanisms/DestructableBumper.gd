@@ -13,13 +13,14 @@ func _on_Bumper_body_entered(body: RigidBody2D) -> void:
 		return
 	if body.is_in_group("balls"):
 		sfx.play()
-		body.apply_central_impulse(force * (body.position - position).normalized())
+		body.apply_central_impulse(force * (body.global_position - global_position).normalized())
 		hp -= 1
 		if hp <= 0:
 			die()
 
 func die() -> void:
 	visible = false
+	collision_layer = 0
 	collision_mask = 0
 	sfx2.play()
 
