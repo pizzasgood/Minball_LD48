@@ -1,0 +1,20 @@
+[remap]
+
+importer="aseprite_importer"
+type="SpriteFrames"
+path="res://.import/triangle_lamp.aseprite-8f0e263893c33e07afa09a6a5b5b819a.tres"
+
+[deps]
+
+source_file="res://Mechanisms/triangle_lamp.aseprite"
+dest_files=[ "res://.import/triangle_lamp.aseprite-8f0e263893c33e07afa09a6a5b5b819a.tres" ]
+
+[params]
+
+mipmaps=true
+repeat=true
+filter=false
+anisotropic_filter=false
+convert_to_linear=false
+mirrored_repeat=false
+video_surface=false

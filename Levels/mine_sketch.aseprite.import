@@ -1,0 +1,20 @@
+[remap]
+
+importer="aseprite_importer"
+type="SpriteFrames"
+path="res://.import/mine_sketch.aseprite-44ee7f9c72b16fe503ed314991cd1e53.tres"
+
+[deps]
+
+source_file="res://Levels/mine_sketch.aseprite"
+dest_files=[ "res://.import/mine_sketch.aseprite-44ee7f9c72b16fe503ed314991cd1e53.tres" ]
+
+[params]
+
+mipmaps=true
+repeat=true
+filter=false
+anisotropic_filter=false
+convert_to_linear=false
+mirrored_repeat=false
+video_surface=false

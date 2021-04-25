@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Levels/mine_middle.png" type="Texture" id=1]
 [ext_resource path="res://Mechanisms/FlipperLeft.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Mechanisms/Boulder.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/MineMiddle.gd" type="Script" id=7]
 [ext_resource path="res://Mechanisms/Drain.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Mechanisms/DestructableBumper.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 840.635, 56.1452 )
@@ -16,6 +17,7 @@ extents = Vector2( 840.635, 56.1452 )
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 1 )
 
 [node name="Drain" parent="." instance=ExtResource( 8 )]
@@ -26,41 +28,128 @@ shape = SubResource( 1 )
 
 [node name="Ore" type="Node2D" parent="."]
 
+[node name="DestructableBumper" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -89.4343, -352.398 )
+
+[node name="DestructableBumper2" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -56.0633, -313.687 )
+
+[node name="DestructableBumper3" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -78.7556, -266.968 )
+
+[node name="DestructableBumper4" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -122.805, -245.611 )
+
+[node name="DestructableBumper5" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -136.154, -360.407 )
+
+[node name="DestructableBumper6" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -182.867, -371.545 )
+
+[node name="DestructableBumper7" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -167.74, -231.362 )
+
+[node name="DestructableBumper8" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 639.521, -119.248 )
+
+[node name="DestructableBumper9" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 688.216, -119.248 )
+
+[node name="DestructableBumper10" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 730.168, -89.2817 )
+
+[node name="DestructableBumper11" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 743.653, -39.0884 )
+
+[node name="DestructableBumper12" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 742.155, 11.854 )
+
+[node name="DestructableBumper13" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 732.416, 65.0439 )
+
+[node name="DestructableBumper14" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 597.568, -90.78 )
+
+[node name="DestructableBumper15" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 572.846, -51.0749 )
+
+[node name="DestructableBumper16" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 548.124, -12.1189 )
+
+[node name="DestructableBumper17" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 710.69, 110.742 )
+
+[node name="DestructableBumper18" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 42.7847, -138.671 )
+
+[node name="DestructableBumper20" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 41.7817, -207.465 )
+
+[node name="DestructableBumper25" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -34.3275, -136.113 )
+
+[node name="DestructableBumper26" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 44.1602, -61.1924 )
+
+[node name="DestructableBumper27" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -201.728, 58.188 )
+
+[node name="DestructableBumper28" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -164.31, 4.73407 )
+
+[node name="DestructableBumper21" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 111.083, -138.594 )
+
+[node name="DestructableBumper22" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( -238.195, 107.161 )
+
+[node name="DestructableBumper23" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 456.637, -127.38 )
+
+[node name="DestructableBumper24" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 330.609, -147.956 )
+
+[node name="DestructableBumper19" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 165.196, 279.418 )
+
+[node name="DestructableBumper29" parent="Ore" instance=ExtResource( 9 )]
+position = Vector2( 433.711, 225.596 )
+
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( -167.545, -132.782, -228.127, -165.745, -228.127, -198.708, -214.763, -227.217, -189.818, -237.908, -74.892, -254.835, -57.9649, -272.653, -33.9106, -301.162, -48.165, -333.234, -75.7829, -356.397, -123.001, -361.743, -185.363, -361.743, -263.763, -350.161, -312.762, -324.325, -340.38, -276.216, -355.525, -211.181, -359.089, -143.473, -339.489, -85.5642, -294.944, -38.3466, -264.653, 7.08929, -318.107, 66.7795, -334.143, 111.324, -338.598, 158.542, -324.343, 191.505, -278.016, 209.323, -288.707, 224.469, -320.78, 245.85, -341.27, 281.486, -358.197, 344.74, -366.215, 416.012, -363.543, 470.357, -490.049, 473.029, -468.733, -395.417, -41.075, -392.049, 13.6716, -348.553, -2.97733, -321.201, -53.5186, -251.038 )
+polygon = PoolVector2Array( -167.545, -132.782, -228.127, -165.745, -228.127, -198.708, -214.763, -227.217, -189.818, -237.908, -97.4281, -249.682, -72.0661, -267.702, -56.0481, -299.738, -60.72, -331.775, -82.7449, -352.465, -123.001, -361.743, -185.363, -361.743, -263.763, -350.161, -312.762, -324.325, -340.38, -276.216, -355.525, -211.181, -359.089, -143.473, -339.489, -85.5642, -302.326, -32.7706, -264.653, 7.08929, -318.107, 66.7795, -334.143, 111.324, -338.598, 158.542, -324.343, 191.505, -278.016, 209.323, -285.72, 237.488, -311.537, 240.294, -330.619, 257.131, -346.333, 291.366, -358.197, 344.74, -366.215, 416.012, -363.543, 470.357, -490.049, 473.029, -468.733, -395.417, -41.075, -392.049, 13.6716, -348.553, -2.97733, -321.201, -53.5186, -251.038 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( 489.655, -104.058, 502.254, -137.446, 500.364, -168.944, 483.986, -199.182, 439.258, -224.381, 392.011, -230.68, 352.954, -226.271, 327.125, -208.002, 301.297, -180.283, 269.799, -151.305, 245.86, -143.746, 231.371, -150.045, 232.631, -168.314, 253.42, -195.402, 301.297, -233.2, 319.566, -274.148, 321.456, -315.095, 331.535, -358.562, 365.553, -394.47, 413.43, -388.8, 461.937, -362.972, 477.686, -344.703, 485.875, -314.465, 480.836, -287.377, 471.386, -269.738, 456.267, -251.469, 483.356, -214.301, 527.453, -194.773, 525.563, -149.415, 513.594, -117.287, 504.144, -97.1287, 494.695, -95.8688 )
+polygon = PoolVector2Array( 489.655, -104.058, 502.254, -137.446, 500.364, -168.944, 483.986, -199.182, 439.258, -224.381, 392.011, -230.68, 352.954, -226.271, 327.125, -208.002, 301.297, -180.283, 269.799, -151.305, 245.86, -143.746, 231.371, -150.045, 232.631, -168.314, 253.42, -195.402, 301.297, -233.2, 319.566, -274.148, 321.456, -315.095, 331.535, -358.562, 366.406, -385.231, 413.43, -388.8, 461.937, -362.972, 477.686, -344.703, 485.875, -314.465, 477.25, -287.898, 496.149, -270.259, 527.453, -194.773, 525.563, -149.415, 513.594, -117.287, 504.144, -97.1287, 494.695, -95.8688 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( 113.606, 45.5862, 153.651, -17.8187, 208.38, -48.52, 262.441, -62.5358, 319.171, -55.8616, 311.83, -35.839, 247.09, 42.2491 )
+polygon = PoolVector2Array( 113.606, 45.5862, 114.532, 24.0203, 153.651, -17.8187, 208.38, -48.52, 262.441, -62.5358, 316.093, -56.0701, 311.83, -35.839, 245.233, 45.6251 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( 278.535, 110.519, 327.979, 45.3427, 351.952, 27.363, 434.359, 10.8816, 492.793, -31.071, 529.501, -66.2812, 560.966, -115.725, 569.206, -171.163, 567.708, -226.6, 549.728, -357.702, 533.247, -399.655, 506.277, -422.878, 450.091, -452.095, 725.779, -443.855, 828.413, 501.577, 676.335, 478.353, 681.579, 325.526, 663.6, 283.573, 625.393, 252.858, 590.182, 252.109, 570.705, 273.834, 532.498, 314.289, 468.82, 342.757, 437.355, 362.984, 447.094, 429.658, 444.847, 476.106, 435.108, 461.872, 423.121, 424.414, 397.65, 413.177, 363.938, 420.669, 332.474, 439.397, 307.002, 467.865, 294.267, 478.353, 277.036, 464.119, 309.25, 413.926, 328.728, 353.245, 407.389, 341.258, 471.816, 324.028, 519.013, 300.804, 549.728, 273.085, 568.457, 244.617, 575.199, 211.655, 649.366, 174.197, 713.793, 112.017, 743.01, 36.3527, 740.762, -56.5424, 716.04, -107.485, 671.091, -123.966, 628.389, -119.471, 582.691, -82.0136, 566.21, -32.5694, 518.76, 19.7548, 454.543, 54.2418, 396.271, 101.81, 374.866, 155.324 )
+polygon = PoolVector2Array( 278.535, 110.519, 327.979, 45.3427, 351.952, 27.363, 434.359, 10.8816, 492.793, -31.071, 529.501, -66.2812, 560.966, -115.725, 569.206, -171.163, 567.708, -226.6, 549.728, -357.702, 533.247, -399.655, 506.277, -422.878, 450.091, -452.095, 725.779, -443.855, 828.413, 501.577, 676.335, 478.353, 681.579, 325.526, 663.6, 283.573, 625.393, 252.858, 590.182, 252.109, 570.705, 273.834, 532.498, 314.289, 468.82, 342.757, 437.355, 362.984, 447.094, 429.658, 444.847, 476.106, 435.108, 461.872, 423.121, 424.414, 397.65, 413.177, 363.938, 420.669, 332.474, 439.397, 307.002, 467.865, 294.267, 478.353, 277.036, 464.119, 291.37, 409.822, 271.228, 360.745, 407.31, 329.692, 471.29, 310.61, 518.995, 289.283, 545.373, 266.834, 649.366, 174.197, 713.793, 112.017, 743.01, 36.3527, 740.762, -56.5424, 716.04, -107.485, 671.091, -123.966, 628.389, -119.471, 582.691, -82.0136, 566.21, -32.5694, 518.76, 19.7548, 454.543, 54.2418, 396.271, 101.81, 374.866, 155.324 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( -277.911, 282.796, -289.709, 311.584, -298.676, 352.171, -301.036, 426.737, -292.069, 468.267, -276.967, 494.696, -265.168, 502.247, -261.393, 465.436, -242.987, 393.229, -209.008, 348.867, -148.128, 332.349, -73.5619, 344.62, 27.4327, 368.217, 43.9505, 358.778, 50.5576, 346.508 )
+polygon = PoolVector2Array( -277.669, 289.225, -289.709, 311.584, -298.676, 352.171, -301.036, 426.737, -292.069, 468.267, -276.967, 494.696, -265.168, 502.247, -261.393, 465.436, -242.987, 393.229, -209.008, 348.867, -159.236, 333.806, 38.8781, 380.949, 48.9803, 356.816, -256.903, 286.419 )
 
 [node name="FlipperLeft" parent="." instance=ExtResource( 2 )]
-position = Vector2( 45.4083, 359.904 )
+position = Vector2( 45.4083, 370.006 )
 
 [node name="FlipperLeft2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -278.787, 223.233 )
+position = Vector2( -280.79, 223.233 )
 
 [node name="FlipperLeft3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 315.882, -41.5043 )
+position = Vector2( 313.879, -43.5065 )
 
 [node name="FlipperRight" parent="." instance=ExtResource( 5 )]
-position = Vector2( 322.904, 368.313 )
+position = Vector2( 271.285, 375.586 )
 
 [node name="FlipperRight2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 116.513, 38.412 )
 
 [node name="DropTargets" parent="." instance=ExtResource( 3 )]
-position = Vector2( 186.329, 49.3883 )
+position = Vector2( 186.539, 48.4094 )
 
 [node name="DropTargets2" parent="." instance=ExtResource( 3 )]
 position = Vector2( -120.927, -175.705 )
@@ -78,18 +167,18 @@ rotation = 0.44146
 [node name="Boulder" parent="DropTargets3" instance=ExtResource( 6 )]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DropTargets3/Boulder"]
-polygon = PoolVector2Array( 273.471, -11.2759, 285.527, -51.1714, 39.0315, -66.2167, 26.8751, -9.83263 )
+polygon = PoolVector2Array( 273.471, -11.2759, 291.124, -47.8637, 39.0315, -66.2167, 26.8751, -9.83263 )
 
 [node name="Bumper" parent="." instance=ExtResource( 4 )]
-position = Vector2( 395.011, -136.897 )
+position = Vector2( 396.899, -137.841 )
 
 [node name="Bumper2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 498.986, -251.984 )
+position = Vector2( 485.757, -289.782 )
 
 [node name="Bumper3" parent="." instance=ExtResource( 4 )]
 position = Vector2( -62.981, 149.654 )
 
 [node name="Bumper4" parent="." instance=ExtResource( 4 )]
-position = Vector2( -62.981, 149.654 )
+position = Vector2( 642.712, 5.40378 )
 
 [connection signal="targets_complete" from="DropTargets" to="." method="_on_DropTargets_targets_complete"]

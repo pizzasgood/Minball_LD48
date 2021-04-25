@@ -12,13 +12,13 @@ onready var targets := [
 
 func _ready() -> void:
 	for i in targets:
-		i.connect("target_hit", self, "_on_DropTargets_target_hit")
+		i.connect("target_hit", self, "_on_target_hit")
 	if up:
 		raise()
 	else:
 		drop()
 
-func _on_DropTargets_target_hit(_target: Area2D, body: RigidBody2D) -> void:
+func _on_target_hit(_target: Area2D, body: RigidBody2D) -> void:
 	var num_up = 0
 	for i in targets:
 		if i.up:
