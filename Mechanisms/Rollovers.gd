@@ -40,7 +40,6 @@ func _on_Timer_timeout() -> void:
 	lamp_1up.light_set(false)
 
 func _unhandled_input(event: InputEvent) -> void:
-	# TODO: my GUI is gobbling my mouse events!
 	if event.is_action_pressed("flippers_left"):
 		cycle_left()
 	if event.is_action_pressed("flippers_right"):

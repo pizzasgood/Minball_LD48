@@ -1,11 +1,19 @@
 extends CenterContainer
 
 onready var resume_button : Button = find_node("ResumeButton")
+onready var cheat_button : Button = find_node("CheatButton")
 onready var quit_button : Button = find_node("QuitButton")
 
 func _on_ResumeButton_pressed() -> void:
 	visible = false
 	get_tree().paused = false
+
+func _on_CheatButton_pressed() -> void:
+		var world := find_parent("Main").find_node("World")
+		world.extra_balls += 1
+		cheat_button.get_node("SFX").play()
+		if len(world.balls) == 0:
+			world.spawn_ball()
 
 func _on_QuitButton_pressed() -> void:
 	visible = false
@@ -26,3 +34,4 @@ func _unhandled_input(event) -> void:
 			resume_button.grab_focus()
 			get_tree().paused = true
 		get_tree().set_input_as_handled()
+
