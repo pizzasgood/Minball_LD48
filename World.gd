@@ -23,10 +23,7 @@ func _ready() -> void:
 
 func extra_balls_set(val: int):
 	extra_balls = val
-	var s := "Extra Balls: "
-	for _i in range(extra_balls):
-		s += "*"
-	balls_label.text = s
+	balls_label.text = "Extra Balls: %s" % extra_balls
 
 func score_set(val: int):
 	score = val

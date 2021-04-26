@@ -1,6 +1,7 @@
 extends CenterContainer
 
 onready var resume_button : Button = find_node("ResumeButton")
+onready var music_button : Button = find_node("MusicButton")
 onready var cheat_button : Button = find_node("CheatButton")
 onready var quit_button : Button = find_node("QuitButton")
 
@@ -12,6 +13,10 @@ func display() -> void:
 func _on_ResumeButton_pressed() -> void:
 	visible = false
 	get_tree().paused = false
+
+func _on_MusicButton_pressed() -> void:
+	var bgm : AudioStreamPlayer = find_parent("Main").find_node("BGM")
+	bgm.playing = not bgm.playing
 
 func _on_CheatButton_pressed() -> void:
 	var world := find_parent("Main").find_node("World")
@@ -28,6 +33,8 @@ func _on_QuitButton_pressed() -> void:
 func _ready() -> void:
 	visible = false
 	resume_button.connect("pressed", self, "_on_ResumeButton_pressed")
+	music_button.connect("pressed", self, "_on_MusicButton_pressed")
+	cheat_button.connect("pressed", self, "_on_CheatButton_pressed")
 	quit_button.connect("pressed", self, "_on_QuitButton_pressed")
 
 func _unhandled_input(event) -> void:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SFX/bumper.wav" type="AudioStream" id=1]
 [ext_resource path="res://Mechanisms/bumper.png" type="Texture" id=2]
 [ext_resource path="res://Mechanisms/Bumper.gd" type="Script" id=3]
+[ext_resource path="res://Mechanisms/glow_360.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 24.0
@@ -24,5 +25,11 @@ shape = SubResource( 1 )
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
 bus = "SFX"
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 4 )
+texture_scale = 2.0
+color = Color( 0.592157, 1, 0.545098, 1 )
+energy = 0.75
 
 [connection signal="body_entered" from="." to="." method="_on_Bumper_body_entered"]

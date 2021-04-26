@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Mechanisms/goopster.aseprite" type="SpriteFrames" id=1]
 [ext_resource path="res://Mechanisms/Goopster.gd" type="Script" id=2]
 [ext_resource path="res://SFX/bumper.wav" type="AudioStream" id=3]
 [ext_resource path="res://SFX/water.wav" type="AudioStream" id=4]
+[ext_resource path="res://Mechanisms/glow_360.png" type="Texture" id=5]
 
 [node name="Goopster" type="RigidBody2D"]
 z_index = 2
@@ -28,6 +29,12 @@ stream = ExtResource( 4 )
 bus = "SFX"
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 5 )
+texture_scale = 5.0
+color = Color( 1, 0.517647, 0.980392, 1 )
+energy = 0.75
 
 [connection signal="body_entered" from="." to="." method="_on_Goopster_body_entered"]
 [connection signal="finished" from="SFX2" to="." method="_on_SFX2_finished"]
