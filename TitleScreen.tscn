@@ -1,73 +1,74 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://AboutWindow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://QualityPopup.tscn" type="PackedScene" id=3]
 
 [node name="TitleScreen" type="Node"]
 script = ExtResource( 1 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="StartWindow" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="StartWindow"]
 margin_left = 142.0
 margin_top = 423.0
 margin_right = 658.0
 margin_bottom = 577.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="StartWindow/PanelContainer"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 508.0
 margin_bottom = 146.0
 
-[node name="Title" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="StartWindow/PanelContainer/VBoxContainer"]
 margin_right = 500.0
 margin_bottom = 14.0
 text = "Minball"
 align = 1
 
-[node name="Image" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="Image" type="TextureRect" parent="StartWindow/PanelContainer/VBoxContainer"]
 margin_top = 18.0
 margin_right = 500.0
 margin_bottom = 18.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="StartWindow/PanelContainer/VBoxContainer"]
 margin_top = 22.0
 margin_right = 500.0
 margin_bottom = 138.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="StartWindow/PanelContainer/VBoxContainer/HBoxContainer"]
 margin_right = 54.0
 margin_bottom = 116.0
 
-[node name="StartButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="StartWindow/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_right = 54.0
 margin_bottom = 30.0
 text = "Start"
 
-[node name="AboutButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="AboutButton" type="Button" parent="StartWindow/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 34.0
 margin_right = 54.0
 margin_bottom = 64.0
 text = "About"
 
-[node name="ExitButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="StartWindow/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 68.0
 margin_right = 54.0
 margin_bottom = 98.0
 text = "Exit"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="StartWindow/PanelContainer/VBoxContainer/HBoxContainer"]
 margin_left = 58.0
 margin_right = 500.0
 margin_bottom = 116.0
 
-[node name="Introduction" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Introduction" type="Label" parent="StartWindow/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 margin_right = 442.0
 margin_bottom = 116.0
 text = "Descend through the mine and collect the golden orbs.
@@ -80,3 +81,6 @@ Press ESC to pause."
 
 [node name="AboutWindow" parent="." instance=ExtResource( 2 )]
 visible = false
+
+[node name="QualityPopup" parent="." instance=ExtResource( 3 )]
+visible = true

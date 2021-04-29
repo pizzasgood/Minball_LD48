@@ -3,11 +3,14 @@ extends Node
 onready var start_button : Button = find_node("StartButton")
 onready var about_button : Button = find_node("AboutButton")
 onready var exit_button : Button = find_node("ExitButton")
+onready var start_window : Control = find_node("StartWindow")
+onready var quality_popup : Control = find_node("QualityPopup")
 
 onready var about_window = find_node("AboutWindow")
 
 func _on_StartButton_pressed() -> void:
-	get_tree().change_scene("res://Main.tscn")
+	start_window.visible = false
+	quality_popup.popup()
 
 func _on_AboutButton_pressed() -> void:
 	about_window.visible = true
@@ -23,4 +26,3 @@ func _ready() -> void:
 
 	if OS.get_name() == "HTML5":
 		exit_button.queue_free()
-

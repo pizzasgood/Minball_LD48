@@ -20,6 +20,15 @@ onready var victory_menu : Control = gui.find_node("Victory")
 func _ready() -> void:
 	self.score = 0
 	spawn_ball()
+	if Globals.low_quality:
+		disable_lighting()
+
+func disable_lighting(node = null) -> void:
+	var target = node if is_instance_valid(node) else self
+	if target is Light2D:
+		target.visible = false
+	for child in target.get_children():
+		disable_lighting(child)
 
 func extra_balls_set(val: int):
 	extra_balls = val

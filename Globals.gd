@@ -1,5 +1,8 @@
 extends Node
 
+var low_quality := false
+
+#TODO: actually utilize this stuff
 var mute_bgm := false setget mute_bgm_set, mute_bgm_get
 
 func mute_bgm_set(new_value):
