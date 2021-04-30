@@ -24,7 +24,7 @@ texture = ExtResource( 4 )
 
 [node name="BG" type="Polygon2D" parent="."]
 color = Color( 0.308594, 0.0892029, 0.0892029, 1 )
-polygon = PoolVector2Array( 21.6342, -297.291, 89.6149, -96.546, 0.709335, 174.172, -59.2229, -40.0862, -27.8632, -298.706 )
+polygon = PoolVector2Array( 15.6406, -334.789, 89.6149, -96.546, 0.709335, 174.172, -59.2229, -40.0862, -17.0156, -335.062 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 230.963, 8.97571 )
@@ -69,9 +69,6 @@ polygon = PoolVector2Array( -86, 254.5, -231.5, 603, -85.5, 502.5 )
 [node name="TailFin2" type="Polygon2D" parent="."]
 color = Color( 0.109804, 0.0588235, 0.0588235, 1 )
 polygon = PoolVector2Array( 104, 262, 106.5, 508.5, 259, 607 )
-
-[node name="OneWay2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1.41577, -302.04 )
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
